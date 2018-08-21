@@ -10,45 +10,46 @@ namespace SpaceConsole
     {
         public static string StartPoint() 
         {
-            int invalidUsername = 0;
-            string userName = "";
-            Console.WriteLine("Greetings traveler, what shall we call you by? \n");
-            string userNameTemp = Console.ReadLine();
-            Console.WriteLine();
-            if (String.IsNullOrEmpty(userNameTemp))
-            {
-                Console.WriteLine("Invalid username, try again");
-                StartPoint();
-                invalidUsername = 1;
-            }
-            else if (userNameTemp.Any(Char.IsDigit))
-            {
-                Console.WriteLine("Invalid username, try again");
-                StartPoint();
-                invalidUsername = 1;
-            }
-            if (invalidUsername == 0)
+            string userName = null;
+            bool invalidUsername = true;
+            do
             {
 
-                Console.WriteLine("You have entered {0}, are you sure?  Please type Yes or No.", userNameTemp);
-                string userAnswer = Console.ReadLine();
-                if (userAnswer.ToLower() == "no")
+                Console.WriteLine("Greetings traveler, what shall we call you by? \n");
+                string userNameTemp = Console.ReadLine();
+                Console.WriteLine();
+                if (String.IsNullOrEmpty(userNameTemp))
                 {
-                    Console.WriteLine("\nYou have answered No.\n");
-                    StartPoint();
+                    Console.WriteLine("Invalid username, try again");
+                    invalidUsername = true;
                 }
-                else if (userAnswer.ToLower() == "yes")
+                else if (userNameTemp.Any(Char.IsDigit))
                 {
-                    Console.WriteLine("\nYou have answered Yes.\n");
-                    userName = userNameTemp;
-                    BeginSL(userName);
+                    Console.WriteLine("Invalid username, try again");
+                    invalidUsername = true;
                 }
-                else
+                if (invalidUsername == false)
                 {
-                    Console.WriteLine("You answer is invaild, please try again");
-                    StartPoint();
+
+                    Console.WriteLine("You have entered {0}, are you sure?  Please type Yes or No.", userNameTemp);
+                    string userAnswer = Console.ReadLine();
+                    if (userAnswer.ToLower() == "no")
+                    {
+                        Console.WriteLine("\nYou have answered No.\n");
+                    }
+                    else if (userAnswer.ToLower() == "yes")
+                    {
+                        Console.WriteLine("\nYou have answered Yes.\n");
+                        userName = userNameTemp;
+                        BeginSL(userName);
+                    }
+                    else
+                    {
+                        Console.WriteLine("You answer is invaild, please try again");
+                    }
                 }
-            }
+                
+            } while (invalidUsername == true);
             return userName;
         }
         public static void BeginSL(string userName)
