@@ -28,6 +28,9 @@ namespace SpaceConsole
             {
                 Console.WriteLine("You answer is invaild, please try again");
                 StartPoint();
+
+
+                test push
             }    
 
         }
