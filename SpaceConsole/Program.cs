@@ -10,6 +10,7 @@ namespace SpaceConsole
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello Buddy");
             WarpSpeed(CurrentSpeed());
         }
         public static void WarpSpeed(double warpFac)

@@ -8,7 +8,10 @@ namespace SpaceConsole
 {
     class Ships
     {
-        public int Speed { get; set; }
-        public int Cargo { get; set; }
+        
     }
+     
+    
+      
+    
 }
