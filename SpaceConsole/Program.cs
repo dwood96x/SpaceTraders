@@ -10,7 +10,8 @@ namespace SpaceConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Buddy 123 ");
+            Console.WriteLine("Welcome to Space Traders 9000. \n");
+            Intro.StartPoint();
             WarpSpeed(CurrentSpeed());
         }
         public static void WarpSpeed(double warpFac)
