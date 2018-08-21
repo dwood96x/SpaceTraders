@@ -8,29 +8,48 @@ namespace SpaceConsole
 {
     class Intro
     {
-        public static void StartPoint() 
+        public static string StartPoint() 
         {
+            int invalidUsername = 0;
+            string userName = "";
             Console.WriteLine("Greetings traveler, what shall we call you by? \n");
-            string userName = Console.ReadLine();
+            string userNameTemp = Console.ReadLine();
             Console.WriteLine();
-            Console.WriteLine("You have entered {0}, are you sure?  Please type Yes or No.", userName);
-            string userAnswer = Console.ReadLine();
+            if (String.IsNullOrEmpty(userNameTemp))
+            {
+                Console.WriteLine("Invalid username, try again");
+                StartPoint();
+                invalidUsername = 1;
+            }
+            else if (userNameTemp.Any(Char.IsDigit))
+            {
+                Console.WriteLine("Invalid username, try again");
+                StartPoint();
+                invalidUsername = 1;
+            }
+            if (invalidUsername == 0)
+            {
 
-            if (userAnswer.ToLower() == "no")
-            {
-                Console.WriteLine("\nYou have answered No.\n");
-                StartPoint();
+                Console.WriteLine("You have entered {0}, are you sure?  Please type Yes or No.", userNameTemp);
+                string userAnswer = Console.ReadLine();
+                if (userAnswer.ToLower() == "no")
+                {
+                    Console.WriteLine("\nYou have answered No.\n");
+                    StartPoint();
+                }
+                else if (userAnswer.ToLower() == "yes")
+                {
+                    Console.WriteLine("\nYou have answered Yes.\n");
+                    userName = userNameTemp;
+                    BeginSL(userName);
+                }
+                else
+                {
+                    Console.WriteLine("You answer is invaild, please try again");
+                    StartPoint();
+                }
             }
-            else if (userAnswer.ToLower() == "yes")
-            {
-                Console.WriteLine("\nYou have answered Yes.\n");
-                BeginSL(userName);
-            }
-            else
-            {
-                Console.WriteLine("You answer is invaild, please try again");
-                StartPoint();
-            }
+            return userName;
         }
         public static void BeginSL(string userName)
         {
