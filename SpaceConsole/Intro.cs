@@ -69,6 +69,8 @@ namespace SpaceConsole
             Inventory.pCredits = 2000;
             Ship.Krillan();
             Time.daysPassed = 408;
+            Inventory.totalDistance = 0;
+            Inventory.currentPlanet = "Earth";
 
         }
     }
