@@ -16,28 +16,28 @@ namespace SpaceConsole
         public static void Krillan()
         {
              shipName = "Krillan";
-             maxSpeed = 2;
+             maxSpeed = 3;
              curShipSize = 1;
              shipCost = 2000;
         }
         public static void Piccolo()
         {
              shipName = "Piccolo";
-             maxSpeed = 4;
+             maxSpeed = 5;
              curShipSize = 2;
              shipCost = 15000;
         }
         public static void Vegito()
         {
              shipName = "Vegito";
-             maxSpeed = 6;
+             maxSpeed = 7;
              curShipSize = 3;
              shipCost = 50000;
         }
         public static void MajinBuu()
         {
              shipName = "Majin Buu";
-             maxSpeed = 5;
+             maxSpeed = 6;
              curShipSize = 4;
              shipCost = 100000;
         }

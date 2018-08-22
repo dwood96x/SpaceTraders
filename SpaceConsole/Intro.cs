@@ -34,7 +34,7 @@ namespace SpaceConsole
                 if (invalidUsername == false)
                 {
 
-                    Console.WriteLine("You have entered {0}, are you sure?  Please type Yes or No.", userNameTemp);
+                    Console.WriteLine("You have entered {0}, are you sure?  Please type Yes or No.\n", userNameTemp);
                     string userAnswer = Console.ReadLine();
                     if (userAnswer.ToLower() == "no")
                     {
@@ -43,7 +43,7 @@ namespace SpaceConsole
                     }
                     else if (userAnswer.ToLower() == "yes")
                     {
-                        Console.WriteLine("\nYou have answered Yes.\n");
+                        Console.WriteLine("\n");
                         userName = userNameTemp;
                         BeginSL(userName);
                         invalidUsername = false;
@@ -60,6 +60,9 @@ namespace SpaceConsole
         }
         public static void BeginSL(string userName)
         {
+            Console.WriteLine("Press ENTER to continue on your adventure.");
+            Console.ReadLine();
+            Console.Clear();
             Console.WriteLine("{0}, you have inherited the family ship in the trading business." , userName);
             Console.WriteLine("Your family also left you with something else.....");
             Console.WriteLine("The family debt of $1,000,000 credits.\n");
