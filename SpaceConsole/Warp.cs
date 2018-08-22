@@ -8,45 +8,79 @@ namespace SpaceConsole
 {
     class Warp
     {
-        public static void WarpSpeed(double warpFac)
+        public static double WarpSpeed(double warpFac = 2)
         {
-            // User inputs warp speed into method to get the velocity in speed of light
+            // User inputs warp speed into method to get the velocity in speed of light, has default warp factor of 2
             double warpVel = Math.Pow(warpFac, (10 / 3)) + Math.Pow((10 - warpFac), (-11 / 3));
             Console.WriteLine("Your current speed to this planet is {0} C ", warpVel);
+            return warpVel;
         }
         public static double CurrentSpeed()
         {
             //Request whats speed the user wants to go and checks if its valid
-            Console.WriteLine("What speed do you want to go? Your top speed is {0}", Ship.maxSpeed);
-            double reqWarp = Double.Parse(Console.ReadLine());
-            if (reqWarp > Ship.maxSpeed)
+            bool acceptedSpeed = false;
+            double reqWarp;
+            do
             {
-                Console.WriteLine("You can't go that fast! Are you trying to blow yourself up!? Try again!");
-                CurrentSpeed();
-            }
-            else if (reqWarp < 0)
-            {
-                Console.WriteLine("A negative warp factor? Are you serious? Try again.");
-                CurrentSpeed();
-            }
-            else if (reqWarp < 1)
-            {
-                Console.WriteLine("I'd rather not get there next century. Try again.");
-                CurrentSpeed();
-            }
-            else
-            {
-                Console.WriteLine("Warp factor of {0} accepted. Engaging warp in 3... 2... 1...", reqWarp);
-            }
+                Console.WriteLine("What speed do you want to go? Your top speed is {0}", Ship.maxSpeed);
+                reqWarp = Double.Parse(Console.ReadLine());
+                
+            
+                if (reqWarp > Ship.maxSpeed)
+                {
+                    Console.WriteLine("You can't go that fast! Are you trying to blow yourself up!? Try again!");
+                }
+                else if (reqWarp < 0)
+                {
+                    Console.WriteLine("A negative warp factor? Are you serious? Try again.");
+                }
+                else if (reqWarp < 1)
+                {
+                    Console.WriteLine("I'd rather not get there next century. Try again.");
+                }
+                else
+                {
+                    Console.WriteLine("Warp factor of {0} accepted. Engaging warp in 3... 2... 1...", reqWarp);
+                    acceptedSpeed = true;
+                }
+            } while (acceptedSpeed == false);
             return reqWarp;
         }
         public static void TravelTime(double distance)
         {
-            //double travTime = distance / WarpSpeed() * 365;
+            // Calculates time to get to destination in days
+            double travTime = distance / WarpSpeed(CurrentSpeed()) * 365;
+            Console.WriteLine("It will take {0} days to get to the destination", travTime);
         }
-        public static void WarpTo(int planet)
+        public static void WarpTo(int toPlanet, string fromPlanet)
         {
-            
+
+            // earth to mgp 6.794 , earth to AC 4.367, MGP to AC 10.44
+            // Earth is (0,0) , My Great Planet is (-4.6, 5) Alpha Centauri is (0, 4.367)
+            if (toPlanet == 1 && fromPlanet == "My Great Planet")
+            {
+                TravelTime(6.794);
+            }
+            else if (toPlanet == 1 && fromPlanet == "Alpha Centauri")
+            {
+                TravelTime(4.367);
+            }
+            else if (toPlanet == 2 && fromPlanet == "Earth")
+            {
+                TravelTime(6.794);
+            }
+            else if (toPlanet == 2 && fromPlanet == "Alpha Centauri")
+            {
+                TravelTime(10.44);
+            }
+            else if (toPlanet == 3 && fromPlanet == "Earth")
+            {
+                TravelTime(4.367);
+            }
+            else if (toPlanet == 3 && fromPlanet == "My Great Planet")
+            {
+                TravelTime(10.44);
+            }
         }
     }
 }

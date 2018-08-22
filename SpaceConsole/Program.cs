@@ -12,6 +12,7 @@ namespace SpaceConsole
         {
             Console.WriteLine("Welcome to Space Traders 9000. \n");
             Inventory.userName = Intro.StartPoint();
+            Warp.WarpTo(2,Inventory.currentPlanet);
 
             /* Test functions :
             Time.TimePassed();
