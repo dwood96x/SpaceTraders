@@ -16,11 +16,10 @@ namespace SpaceConsole
         }
         public static double CurrentSpeed()
         {
-            double maxSpeed = 10;
             //Request whats speed the user wants to go and checks if its valid
-            Console.WriteLine("What speed do you want to go? Your top speed is {0}", maxSpeed);
+            Console.WriteLine("What speed do you want to go? Your top speed is {0}", Ship.maxSpeed);
             double reqWarp = Double.Parse(Console.ReadLine());
-            if (reqWarp > maxSpeed)
+            if (reqWarp > Ship.maxSpeed)
             {
                 Console.WriteLine("You can't go that fast! Are you trying to blow yourself up!? Try again!");
                 CurrentSpeed();

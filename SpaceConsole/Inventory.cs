@@ -8,6 +8,7 @@ namespace SpaceConsole
 {
     public class Inventory
     {
+        public static string userName;
         public static int pCredits;
         public static int age;
         public static List<string> CargoSpace = new List<string>();
