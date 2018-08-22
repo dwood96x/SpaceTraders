@@ -11,7 +11,7 @@ namespace SpaceConsole
         public static string StartPoint() 
         {
             string userName = null;
-            bool invalidUsername = true;
+            bool invalidUsername = false;
             do
             {
 
@@ -28,6 +28,7 @@ namespace SpaceConsole
                     Console.WriteLine("Invalid username, try again");
                     invalidUsername = true;
                 }
+                
                 if (invalidUsername == false)
                 {
 
@@ -36,6 +37,7 @@ namespace SpaceConsole
                     if (userAnswer.ToLower() == "no")
                     {
                         Console.WriteLine("\nYou have answered No.\n");
+                        invalidUsername = true;
                     }
                     else if (userAnswer.ToLower() == "yes")
                     {
@@ -46,6 +48,7 @@ namespace SpaceConsole
                     else
                     {
                         Console.WriteLine("You answer is invaild, please try again");
+                        invalidUsername = true;
                     }
                 }
                 
@@ -56,12 +59,13 @@ namespace SpaceConsole
         {
             Console.WriteLine("{0}, you have inherited the family ship in the trading business." , userName);
             Console.WriteLine("Your family also left you with something else.....");
-            Console.WriteLine("The family debt of $1000000 credits.\n");
-            Console.WriteLine("You have 40 years to ammass the money to pay off this debt, or ");
+            Console.WriteLine("The family debt of $1,000,000 credits.\n");
+            Console.WriteLine("You have 40 years to amass the money to pay off this debt or face severe consequences.");
+            Console.WriteLine("Good luck.");
             Inventory.age = 20;
             Inventory.pCredits = 2000;
             Ship.Krillan();
-            Time.daysPassed = 0;
+            Time.daysPassed = 408;
 
         }
     }

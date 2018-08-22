@@ -10,10 +10,10 @@ namespace SpaceConsole
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Welcome to Space Traders 9000. \n");
-            //Inventory.userName = Intro.StartPoint();
-            
-            
+            Console.WriteLine("Welcome to Space Traders 9000. \n");
+            Inventory.userName = Intro.StartPoint();
+
+            Time.TimePassed();
             /* Test functions :
             Console.WriteLine(userName);
             Warp.WarpSpeed(Warp.CurrentSpeed());
