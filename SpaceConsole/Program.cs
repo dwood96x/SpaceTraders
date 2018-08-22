@@ -13,15 +13,15 @@ namespace SpaceConsole
             Console.WriteLine("Welcome to Space Traders 9000. \n");
             Inventory.userName = Intro.StartPoint();
 
-            Time.TimePassed();
             /* Test functions :
+            Time.TimePassed();
             Console.WriteLine(userName);
             Warp.WarpSpeed(Warp.CurrentSpeed());
             Inventory.checkInventory();
             */
             //string userName = Intro.StartPoint();
             //Console.WriteLine(userName);
-            PlanetTP.EarthTP();
+            //PlanetTP.EarthTP();
 
             //Warp.WarpSpeed(Warp.CurrentSpeed());
 

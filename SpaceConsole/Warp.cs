@@ -26,7 +26,7 @@ namespace SpaceConsole
             }
             else if (reqWarp < 0)
             {
-                Console.WriteLine("You realize giving me a negative number wont let us go back in time right? Try again.");
+                Console.WriteLine("A negative warp factor? Are you serious? Try again.");
                 CurrentSpeed();
             }
             else if (reqWarp < 1)
@@ -43,6 +43,10 @@ namespace SpaceConsole
         public static void TravelTime(double distance)
         {
             //double travTime = distance / WarpSpeed() * 365;
+        }
+        public static void WarpTo(int planet)
+        {
+            
         }
     }
 }

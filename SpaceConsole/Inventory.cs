@@ -11,6 +11,8 @@ namespace SpaceConsole
         public static string userName;
         public static int pCredits;
         public static int age;
+        public static double totalDistance;
+        public static string currentPlanet;
         public static List<string> CargoSpace = new List<string>();
         public static double maxCargoSize = Ship.curShipSize;
         public static void AddCargo(string boughtItem)
@@ -35,6 +37,7 @@ namespace SpaceConsole
         {
             Console.WriteLine("You are {0} years old.", age);
             Console.WriteLine("You have {0} credits.", pCredits);
+            Console.WriteLine("You are at {0}", currentPlanet);
             Console.WriteLine("--------------------------------------");
             Console.WriteLine("Your {0} has a max cargo space of {1}", Ship.shipName, maxCargoSize );
             Console.WriteLine("--------------------------------------");
