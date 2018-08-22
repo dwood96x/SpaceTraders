@@ -19,12 +19,9 @@ namespace SpaceConsole
             Console.WriteLine(userName);
             Warp.WarpSpeed(Warp.CurrentSpeed());
             Inventory.checkInventory();
-            */
-            string userName = Intro.StartPoint();
-            Console.WriteLine(userName);
             PlanetTP.EarthTP();
+            */
 
-            Warp.WarpSpeed(Warp.CurrentSpeed());
 
         }
 
