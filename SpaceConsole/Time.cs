@@ -15,6 +15,7 @@ namespace SpaceConsole
             if (daysPassed >= 365)
             {
                 Inventory.age += 1;
+                daysPassed -= 365;
                 Console.WriteLine("One year has passed. You are now {0} years old.", Inventory.age);
                 Console.WriteLine("You have {0} years left to pay off your debt.",(60 - Inventory.age));
             }

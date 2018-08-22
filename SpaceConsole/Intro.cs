@@ -11,7 +11,7 @@ namespace SpaceConsole
         public static string StartPoint() 
         {
             string userName = null;
-            bool invalidUsername = false;
+            bool invalidUsername = true;
             do
             {
 
@@ -21,14 +21,16 @@ namespace SpaceConsole
                 if (String.IsNullOrEmpty(userNameTemp))
                 {
                     Console.WriteLine("Invalid username, try again");
-                    invalidUsername = true;
                 }
                 else if (userNameTemp.Any(Char.IsDigit))
                 {
                     Console.WriteLine("Invalid username, try again");
-                    invalidUsername = true;
                 }
-                
+                else
+                {
+                    invalidUsername = false;
+                }
+
                 if (invalidUsername == false)
                 {
 
@@ -44,6 +46,7 @@ namespace SpaceConsole
                         Console.WriteLine("\nYou have answered Yes.\n");
                         userName = userNameTemp;
                         BeginSL(userName);
+                        invalidUsername = false;
                     }
                     else
                     {
