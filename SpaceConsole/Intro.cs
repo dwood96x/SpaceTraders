@@ -57,9 +57,11 @@ namespace SpaceConsole
             Console.WriteLine("{0}, you have inherited the family ship in the trading business." , userName);
             Console.WriteLine("Your family also left you with something else.....");
             Console.WriteLine("The family debt of $1000000 credits.\n");
+            Console.WriteLine("You have 40 years to ammass the money to pay off this debt, or ");
             Inventory.age = 20;
             Inventory.pCredits = 2000;
             Ship.Krillan();
+            Time.daysPassed = 0;
 
         }
     }
