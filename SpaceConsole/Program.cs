@@ -14,7 +14,7 @@ namespace SpaceConsole
             //string userName = Intro.StartPoint();
             //Console.WriteLine(userName);
             //Warp.WarpSpeed(Warp.CurrentSpeed());
-
+            Inventory.checkInventory();
         }
 
     }

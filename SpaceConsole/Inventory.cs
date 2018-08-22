@@ -8,10 +8,10 @@ namespace SpaceConsole
 {
     public class Inventory
     {
-        public static int pCredits = 2000;
-
+        public static int pCredits;
+        public static int age;
         public static List<string> CargoSpace = new List<string>();
-        //int maxCargoSize = curShipSize;
+        public static double maxCargoSize = Ship.curShipSize;
         public static void AddCargo(string boughtItem)
         {
             if (CargoSpace.Count == maxCargoSize)
@@ -30,6 +30,15 @@ namespace SpaceConsole
             Console.WriteLine("{0} removed from cargo.", removeItem);
         }
 
-
+        public static void checkInventory()
+        {
+            Console.WriteLine("You are {0} years old.", age);
+            Console.WriteLine("You have {0} credits.", pCredits);
+            Console.WriteLine("--------------------------------------");
+            Console.WriteLine("Your {0} has a max cargo space of {1}", Ship.shipName, maxCargoSize );
+            Console.WriteLine("--------------------------------------");
+            foreach (var a in CargoSpace)
+                Console.WriteLine(a);
+        }
     }
 }
