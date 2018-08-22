@@ -8,6 +8,7 @@ namespace SpaceConsole
 {
     class Warp
     {
+        public static double travTime;
         public static double WarpSpeed(double warpFac = 2)
         {
             // User inputs warp speed into method to get the velocity in speed of light, has default warp factor of 2
@@ -49,7 +50,7 @@ namespace SpaceConsole
         public static void TravelTime(double distance)
         {
             // Calculates time to get to destination in days
-            double travTime = distance / WarpSpeed(CurrentSpeed()) * 365;
+            travTime = distance / WarpSpeed(CurrentSpeed()) * 365;
             Console.WriteLine("It will take {0} days to get to the destination", travTime);
         }
         public static void WarpTo(int toPlanet, string fromPlanet)
@@ -81,6 +82,7 @@ namespace SpaceConsole
             {
                 TravelTime(10.44);
             }
+            Time.TimePassed();
         }
     }
 }

@@ -8,17 +8,20 @@ namespace SpaceConsole
 {
     class Time
     {
-        public static uint daysPassed;
+        public static double daysPassed;
         public static void TimePassed()
         {
-            //daysPassed += Warp.timeTrav;
+            daysPassed += Warp.travTime;
             if (daysPassed >= 365)
             {
+                // TODO - Needs to account for multiple years passing in 1 travel
                 Inventory.age += 1;
                 daysPassed -= 365;
-                Console.WriteLine("One year has passed. You are now {0} years old.", Inventory.age);                
+                Console.WriteLine("{1} year has passed. You are now {0} years old.", Inventory.age);                
             }
             Console.WriteLine("You have {0} years left to pay off your debt.", (60 - Inventory.age));
+            Console.WriteLine(Warp.travTime);
+
         }
 
     }
