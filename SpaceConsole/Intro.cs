@@ -68,6 +68,8 @@ namespace SpaceConsole
             Console.WriteLine("The family debt of $1,000,000 credits.\n");
             Console.WriteLine("You have 40 years to amass the money to pay off this debt or face severe consequences.");
             Console.WriteLine("Good luck.");
+            Console.WriteLine("Press enter to continue");
+            Console.ReadLine();
             Inventory.age = 20;
             Inventory.pCredits = 2000;
             Ship.Krillan();
