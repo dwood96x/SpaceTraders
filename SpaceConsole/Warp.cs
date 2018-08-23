@@ -13,7 +13,7 @@ namespace SpaceConsole
         {
             // User inputs warp speed into method to get the velocity in speed of light, has default warp factor of 2
             double warpVel = Math.Pow(warpFac, (10 / 3)) + Math.Pow((10 - warpFac), (-11 / 3));
-            Console.WriteLine("Your current speed to this planet is {0} C ", warpVel);
+            Console.WriteLine("Your current speed to this planet is {0:F2} C ", warpVel);
             return warpVel;
         }
         public static double CurrentSpeed()
@@ -51,7 +51,7 @@ namespace SpaceConsole
         {
             // Calculates time to get to destination in days
             travTime = distance / WarpSpeed(CurrentSpeed()) * 365;
-            Console.WriteLine("It will take {0} days to get to the destination", travTime);
+            Console.WriteLine("It will take {0:F2} days to get to the destination", travTime);
         }
         public static void WarpTo(int toPlanet, string fromPlanet)
         {
