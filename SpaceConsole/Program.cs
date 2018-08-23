@@ -12,9 +12,10 @@ namespace SpaceConsole
         {
             Console.WriteLine("Welcome to Space Traders 9000. \n");
             Inventory.userName = Intro.StartPoint();
-            Warp.WarpTo(2, Inventory.currentPlanet);
+
 
             /* Test functions :
+            Warp.WarpTo(2, Inventory.currentPlanet);
             Time.TimePassed();
             Console.WriteLine(userName);
             Warp.WarpSpeed(Warp.CurrentSpeed());
@@ -22,6 +23,14 @@ namespace SpaceConsole
             PlanetTP.EarthTP();
             */
 
+
+        }
+
+        public static void MainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("You are in your ship now.");
+            Console.WriteLine("\nYou can go to the TradePost, Travel, Check your stats, or exit");
 
         }
 

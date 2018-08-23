@@ -12,7 +12,8 @@ namespace SpaceConsole
         {
             Console.WriteLine("Game over!");
             Console.WriteLine("Press enter to see your stats.");
-
+            Console.ReadLine();
+            
         }
     }
 }
