@@ -8,23 +8,33 @@ namespace SpaceConsole
 {
     class PlanetTP
     {
-        string[] TpList = new string[] {" ", "Water","Food","Fuel","Common Mineral","Medical Supplies","Technology","Weapons","Rare Material","Dark Matter"};
+        //string[] TpList = new string[] {" ", "Water","Food","Fuel","Common Mineral","Medical Supplies","Technology","Weapons","Rare Material","Dark Matter"};
         public static bool exitA = true;
-
         public static void EarthTP()
-
         {
-            Console.WriteLine("Welcome to the Trading Post of Earth.\n");
-            Console.WriteLine("Here is the list of items availble.\n");
+            string earth = "\nWelcome to the Trading Post of Earth.\n";
+            for (int i = 0; i < earth.Length; i++)
+            {
+                Console.Write(earth[i]);
+                System.Threading.
+                Thread.Sleep(60);
+            }
+            string avail = "\nHere is the list of availble items.\n";
+            for (int i = 0; i < avail.Length; i++)
+            {
+                Console.Write(avail[i]);
+                System.Threading.
+                Thread.Sleep(60);
+            }
             Console.WriteLine("===========================================\n");
-            Console.WriteLine("\tOption 1 - Water\n\tOption 2 - Food\n\tOption 3 - Fuel" +
-                             "\n\tOption 4 - Common Mineral\n\tOption 5 - Medical Supplies\n\tOption 6 - Technology\n" +
-                              "\tOption 7 - Weapons\n\tOption 8 - Rare Material\n\tOption 9 - Dark Matter\n");
-            
+            Console.WriteLine("\t1 - Water\n\t2 - Food\n\t3 - Fuel" +
+                             "\n\t4 - Common Mineral\n\t5 - Medical Supplies\n\t6 - Technology" +
+                              "\n\t7 - Weapons\n\t8 - Rare Material\n\t9 - Dark Matter\n");
+            Console.WriteLine("===========================================");
+
             do
             {
-
-                Console.WriteLine("{0}, would you like to Buy, Sell, or Leave", Inventory.userName);
+                Console.WriteLine("\n{0}, would you like to Buy, Sell, or Leave", Inventory.userName);
                 string userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == "buy")
@@ -37,7 +47,7 @@ namespace SpaceConsole
                 }
                 else if (userInput.ToLower() == "leave")
                 {
-                    Leave();
+                    Leave();                    
                 }
                 else
                 {
@@ -117,20 +127,22 @@ namespace SpaceConsole
         }
         public static void BuyItems()
             {
-                Console.WriteLine("Which item would you like to buy {0}\n", Inventory.userName);
-                Console.WriteLine("===========================================\n");
-                Console.WriteLine("\t1 Water\n\t2 Food\n\t3 Fuel" +
-                                 "\n\t4 Common Mineral\n\t5 Medical Supplies\n\t6 Technology\n" +
-                                  "\t7 Weapons\n\t8 Rare Material\n\t9 Dark Matter\n");
-            //need to add a selection here
-            }
+                Console.Clear();
+                Console.WriteLine("Which item would you like to buy {0}?  Please use the intergers only!\n", Inventory.userName);
+                Console.WriteLine("===========================================");
+                Console.WriteLine("\n\t1 Water\n\t2 Food\n\t3 Fuel" +
+                                  "\n\t4 Common Mineral\n\t5 Medical Supplies\n\t6 Technology" +
+                                  "\n\t7 Weapons\n\t8 Rare Material\n\t9 Dark Matter\n");
+                Console.WriteLine("===========================================");          
+        }
         public static void SellItems()
         {
             Console.WriteLine("Which item would you like to sell {0}\n", Inventory.userName);
-            Console.WriteLine("===========================================\n");
+            Console.WriteLine("===========================================");
             Console.WriteLine("\t1 Water\n\t2 Food\n\t3 Fuel" +
                                  "\n\t4 Common Mineral\n\t5 Medical Supplies\n\t6 Technology\n" +
                                   "\t7 Weapons\n\t8 Rare Material\n\t9 Dark Matter\n");
+            Console.WriteLine("===========================================");
             //need to add a selection here
         }
         public static void Leave()
@@ -140,7 +152,7 @@ namespace SpaceConsole
 
             if (userInput.ToLower() == "yes")
             {
-                Program.MainMenu();
+                exitA = true;
             }
             else
             {
