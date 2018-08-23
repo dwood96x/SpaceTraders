@@ -33,7 +33,7 @@ namespace SpaceConsole
             Console.WriteLine("{0} removed from cargo.", removeItem);
         }
 
-        public static void checkInventory()
+        public static void CheckInventory()
         {
             Console.WriteLine("You are {0} years old.", age);
             Console.WriteLine("You have {0} credits.", pCredits);

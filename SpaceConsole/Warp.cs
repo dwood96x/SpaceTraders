@@ -61,26 +61,32 @@ namespace SpaceConsole
             if (toPlanet == 1 && fromPlanet == "My Great Planet")
             {
                 TravelTime(6.794);
+                Inventory.currentPlanet = "Earth";
             }
             else if (toPlanet == 1 && fromPlanet == "Alpha Centauri")
             {
                 TravelTime(4.367);
+                Inventory.currentPlanet = "Earth";
             }
             else if (toPlanet == 2 && fromPlanet == "Earth")
             {
                 TravelTime(6.794);
+                Inventory.currentPlanet = "My Great Planet";
             }
             else if (toPlanet == 2 && fromPlanet == "Alpha Centauri")
             {
                 TravelTime(10.44);
+                Inventory.currentPlanet = "My Great Planet";
             }
             else if (toPlanet == 3 && fromPlanet == "Earth")
             {
                 TravelTime(4.367);
+                Inventory.currentPlanet = "Alpha Centauri";
             }
             else if (toPlanet == 3 && fromPlanet == "My Great Planet")
             {
                 TravelTime(10.44);
+                Inventory.currentPlanet = "Alpha Centauri";
             }
             Time.TimePassed();
         }
