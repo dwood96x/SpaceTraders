@@ -122,6 +122,7 @@ namespace SpaceConsole
                 Console.WriteLine("\t1 Water\n\t2 Food\n\t3 Fuel" +
                                  "\n\t4 Common Mineral\n\t5 Medical Supplies\n\t6 Technology\n" +
                                   "\t7 Weapons\n\t8 Rare Material\n\t9 Dark Matter\n");
+            //need to add a selection here
             }
         public static void SellItems()
         {
@@ -130,26 +131,22 @@ namespace SpaceConsole
             Console.WriteLine("\t1 Water\n\t2 Food\n\t3 Fuel" +
                                  "\n\t4 Common Mineral\n\t5 Medical Supplies\n\t6 Technology\n" +
                                   "\t7 Weapons\n\t8 Rare Material\n\t9 Dark Matter\n");
+            //need to add a selection here
         }
         public static void Leave()
         {
             Console.WriteLine("{0}, are you sure you want to leave the Trading Post?\n" + "Yes or No\n" , Inventory.userName);
             string userInput = Console.ReadLine();
 
-                if (userInput.ToLower() == "Yes")
-                {
-                exitA = false;
-                        //Ship menu 
-                }
-                else if (userInput.ToLower() == "No")
-                {
+            if (userInput.ToLower() == "yes")
+            {
+                Program.MainMenu();
+            }
+            else
+            {
 
-                }
-                else
-                {
-
-                }
+            }
 
         }
-        }
+    }
 }
