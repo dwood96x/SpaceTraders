@@ -13,6 +13,7 @@ namespace SpaceConsole
         {
             Console.WriteLine("Welcome to Space Traders 9000. \n");
             Inventory.userName = Intro.StartPoint();
+            MainMenu();
  
 
             /* Test functions :
@@ -29,13 +30,13 @@ namespace SpaceConsole
 
         public static void MainMenu()
         {
-            bool exit = false;
-            Console.Clear();
-            Console.WriteLine("You are in your ship now.");
-            Console.WriteLine("\nYou can go to the TradePost, Travel, Check your stats, or exit");
-            string input = Console.ReadLine();
+            bool exitChoice = false;
             do
             {
+                Console.Clear();
+                Console.WriteLine("You are in your ship orbiting {0}", Inventory.currentPlanet);
+                Console.WriteLine("\nYou can go to the tradepost, travel, check your inventory (stats), or exit");
+                string input = Console.ReadLine();
                 if (input.ToLower() == "tradepost")
                 {
                     if (Inventory.currentPlanet == "Earth")
@@ -54,11 +55,21 @@ namespace SpaceConsole
                 }
                 else if (input.ToLower() == "travel")
                 {
-                    //Travel where method here
+                    Warp.WarpTo(2, Inventory.currentPlanet);
+                }
+                else if (input.ToLower() == "stats")
+                {
+                    Inventory.CheckInventory();
+                }
+                else if (input.ToLower() == "exit")
+                {
+                    Console.WriteLine("Leaving already? See ya next time. Bye");
+                    Console.ReadLine();
+                    exitChoice = true;
                 }
 
 
-            } while (exit == false);
+            } while (exitChoice == false);
         }
     }
 }
