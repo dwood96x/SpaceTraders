@@ -55,10 +55,28 @@ namespace SpaceConsole
                 }
                 else if (input.ToLower() == "travel")
                 {
-                    Console.WriteLine("Where would you like to warp to? 1 for Earth, 2 for My Great Planet, 3 Alpha Centauri");
+                    Console.WriteLine("Where would you like to warp to? Earth, My Great Planet, or Alpha Centauri?");
                     string travelInput = Console.ReadLine();
-                    // do if else
-                    Warp.WarpTo(2, Inventory.currentPlanet);
+                    int travelChoice = 0;
+                    if (travelInput.ToLower() == "earth" && Inventory.currentPlanet != "Earth")
+                    {
+                        travelChoice = 1;
+                    }
+                    else if (travelInput.ToLower() == "my great planet" && Inventory.currentPlanet != "My Great Planet")
+                    {
+                        travelChoice = 2;
+                    }
+                    else if (travelInput.ToLower() == "alpha centauri" && Inventory.currentPlanet != "Alpha Centauri")
+                    {
+                        travelChoice = 3;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You are already at that planet!");
+                        Console.WriteLine("Press enter to continue");
+                        Console.ReadLine();
+                    }
+                    Warp.WarpTo(travelChoice, Inventory.currentPlanet);
                 }
                 else if (input.ToLower() == "stats")
                 {

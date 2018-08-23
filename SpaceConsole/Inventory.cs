@@ -35,6 +35,7 @@ namespace SpaceConsole
 
         public static void CheckInventory()
         {
+            maxCargoSize = Ship.curShipSize;
             Console.WriteLine("You are {0} years old.", age);
             Console.WriteLine("You have {0} credits.", pCredits);
             Console.WriteLine("You are at {0}", currentPlanet);
@@ -43,6 +44,8 @@ namespace SpaceConsole
             Console.WriteLine("--------------------------------------");
             foreach (var a in CargoSpace)
                 Console.WriteLine(a);
+            Console.WriteLine("Press enter to continue");
+            Console.ReadLine();
         }
     }
 }
