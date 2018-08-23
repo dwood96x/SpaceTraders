@@ -55,6 +55,9 @@ namespace SpaceConsole
                 }
                 else if (input.ToLower() == "travel")
                 {
+                    Console.WriteLine("Where would you like to warp to? 1 for Earth, 2 for My Great Planet, 3 Alpha Centauri");
+                    string travelInput = Console.ReadLine();
+                    // do if else
                     Warp.WarpTo(2, Inventory.currentPlanet);
                 }
                 else if (input.ToLower() == "stats")
