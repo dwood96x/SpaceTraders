@@ -43,7 +43,7 @@ namespace SpaceConsole
                     }
                     else if (userAnswer.ToLower() == "yes")
                     {
-                        Console.WriteLine("\n");
+                        Console.WriteLine("");
                         userName = userNameTemp;
                         BeginSL(userName);
                         invalidUsername = false;

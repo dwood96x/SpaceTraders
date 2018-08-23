@@ -38,9 +38,9 @@ namespace SpaceConsole
             {
                 Console.Clear();
                 Console.WriteLine("You are in your ship orbiting {0}", Inventory.currentPlanet);
-                Console.WriteLine("\nYou can go to the tradepost, travel, check your inventory (stats), or exit");
+                Console.WriteLine("\nYou can go to the Trade Post, Travel, Check your Inventory (stats), or Exit");
                 string input = Console.ReadLine();
-                if (input.ToLower() == "tradepost")
+                if (input.ToLower() == "trade post")
                 {
                     if (Inventory.currentPlanet == "Earth")
                     {
@@ -58,7 +58,7 @@ namespace SpaceConsole
                 }
                 else if (input.ToLower() == "travel")
                 {
-                    Console.WriteLine("Where would you like to warp to? Earth, My Great Planet, or Alpha Centauri?");
+                    Console.WriteLine("\nWhere would you like to warp to? \n\tEarth, My Great Planet, or Alpha Centauri?");
                     string travelInput = Console.ReadLine();
                     int travelChoice = 0;
                     if (travelInput.ToLower() == "earth" && Inventory.currentPlanet != "Earth")
@@ -75,7 +75,7 @@ namespace SpaceConsole
                     }
                     else
                     {
-                        Console.WriteLine("You are already at that planet!");
+                        Console.WriteLine("You are already on that planet!");
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
                     }

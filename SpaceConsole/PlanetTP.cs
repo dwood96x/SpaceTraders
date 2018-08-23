@@ -26,11 +26,11 @@ namespace SpaceConsole
                 System.Threading.
                 Thread.Sleep(60);
             }
-            Console.WriteLine("===========================================\n");
+            Console.WriteLine("==================================\n");
             Console.WriteLine("\t1 - Water\n\t2 - Food\n\t3 - Fuel" +
                              "\n\t4 - Common Mineral\n\t5 - Medical Supplies\n\t6 - Technology" +
                               "\n\t7 - Weapons\n\t8 - Rare Material\n\t9 - Dark Matter\n");
-            Console.WriteLine("===========================================");
+            Console.WriteLine("==================================");
 
             do
             {
@@ -43,7 +43,7 @@ namespace SpaceConsole
                 }
                 else if (userInput.ToLower() == "sell")
                 {
-                    SellItems();
+                    SellItems.SItems();
                 }
                 else if (userInput.ToLower() == "leave")
                 {
@@ -59,8 +59,21 @@ namespace SpaceConsole
         }
         public static void MyGPTP()
         {
-            Console.WriteLine("Welcome to the Trading Post of My Great plant.\n");
-            Console.WriteLine("Here is the list of items availble.\n");
+            string MyGPTP = "\nWelcome to the Trading Post of My Great Planet.\n";
+            for (int i = 0; i < MyGPTP.Length; i++)
+            {
+                Console.Write(MyGPTP[i]);
+                System.Threading.
+                Thread.Sleep(60);
+            }
+            string avail = "\nHere is the list of availble items.\n";
+            for (int i = 0; i < avail.Length; i++)
+            {
+                Console.Write(avail[i]);
+                System.Threading.
+                Thread.Sleep(60);
+            }
+            
             Console.WriteLine("===========================================\n");
             Console.WriteLine("\tOption 1 - Water\n\tOption 2 - Food\n\tOption 3 - Fuel" +
                              "\n\tOption 4 - Common Mineral\n\tOption 5 - Medical Supplies\n\tOption 6 - Technology\n" +
@@ -73,11 +86,11 @@ namespace SpaceConsole
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems();
+                    BuyItems.BItems();
                 }
                 else if (userInput.ToLower() == "sell")
                 {
-                    SellItems();
+                    SellItems.SItems();
                 }
                 else if (userInput.ToLower() == "leave")
                 {
@@ -86,15 +99,26 @@ namespace SpaceConsole
                 else
                 {
                     Console.WriteLine("You answer is invaild, please try again");
-
                 }
 
             } while (exitA == true);
         }
         public static void ACTP()
         {
-            Console.WriteLine("Welcome to the Trading Post of Alpha Centauri.\n");
-            Console.WriteLine("Here is the list of items availble.\n");
+            string ACTP = "\nWelcome to the Trading Post of Alpha Centauri";
+            for (int i = 0; i < ACTP.Length; i++)
+            {
+                Console.Write(ACTP[i]);
+                System.Threading.
+                Thread.Sleep(60);
+            }
+            string avail = "\nHere is the list of availble items.\n";
+            for (int i = 0; i < avail.Length; i++)
+            {
+                Console.Write(avail[i]);
+                System.Threading.
+                Thread.Sleep(60);
+            }
             Console.WriteLine("===========================================\n");
             Console.WriteLine("\tOption 1 - Water\n\tOption 2 - Food\n\tOption 3 - Fuel" +
                              "\n\tOption 4 - Common Mineral\n\tOption 5 - Medical Supplies\n\tOption 6 - Technology\n" +
