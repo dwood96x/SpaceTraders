@@ -12,6 +12,7 @@ namespace SpaceConsole
         public static bool exitA = true;
 
         public static void EarthTP()
+
         {
             Console.WriteLine("Welcome to the Trading Post of Earth.\n");
             Console.WriteLine("Here is the list of items availble.\n");
@@ -43,6 +44,75 @@ namespace SpaceConsole
                     Console.WriteLine("You answer is invaild, please try again");
                     
                 }
+
+            } while (exitA == true);
+        }
+        public static void MyGPTP()
+        {
+            Console.WriteLine("Welcome to the Trading Post of My Great plant.\n");
+            Console.WriteLine("Here is the list of items availble.\n");
+            Console.WriteLine("===========================================\n");
+            Console.WriteLine("\tOption 1 - Water\n\tOption 2 - Food\n\tOption 3 - Fuel" +
+                             "\n\tOption 4 - Common Mineral\n\tOption 5 - Medical Supplies\n\tOption 6 - Technology\n" +
+                              "\tOption 7 - Weapons\n\tOption 8 - Rare Material\n\tOption 9 - Dark Matter\n");
+            do
+            {
+
+                Console.WriteLine("{0}, would you like to Buy, Sell, or Leave", Inventory.userName);
+                string userInput = Console.ReadLine();
+
+                if (userInput.ToLower() == "buy")
+                {
+                    BuyItems();
+                }
+                else if (userInput.ToLower() == "sell")
+                {
+                    SellItems();
+                }
+                else if (userInput.ToLower() == "leave")
+                {
+                    Leave();
+                }
+                else
+                {
+                    Console.WriteLine("You answer is invaild, please try again");
+
+                }
+
+            } while (exitA == true);
+        }
+        public static void ACTP()
+        {
+            Console.WriteLine("Welcome to the Trading Post of Alpha Centauri.\n");
+            Console.WriteLine("Here is the list of items availble.\n");
+            Console.WriteLine("===========================================\n");
+            Console.WriteLine("\tOption 1 - Water\n\tOption 2 - Food\n\tOption 3 - Fuel" +
+                             "\n\tOption 4 - Common Mineral\n\tOption 5 - Medical Supplies\n\tOption 6 - Technology\n" +
+                              "\tOption 7 - Weapons\n\tOption 8 - Rare Material\n\tOption 9 - Dark Matter\n");
+            do
+            {
+
+                Console.WriteLine("{0}, would you like to Buy, Sell, or Leave", Inventory.userName);
+                string userInput = Console.ReadLine();
+
+                if (userInput.ToLower() == "buy")
+                {
+                    BuyItems();
+                }
+                else if (userInput.ToLower() == "sell")
+                {
+                    SellItems();
+                }
+                else if (userInput.ToLower() == "leave")
+                {
+                    Leave();
+                }
+                else
+                {
+                    Console.WriteLine("You answer is invaild, please try again");
+
+                }
+
             } while (exitA == true);
         }
         public static void BuyItems()
