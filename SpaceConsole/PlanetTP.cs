@@ -39,7 +39,7 @@ namespace SpaceConsole
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems();
+                    BuyItems.BItems();
                 }
                 else if (userInput.ToLower() == "sell")
                 {
@@ -107,11 +107,11 @@ namespace SpaceConsole
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems();
+                    BuyItems.BItems();
                 }
                 else if (userInput.ToLower() == "sell")
                 {
-                    SellItems();
+                    SellItems.SItems();
                 }
                 else if (userInput.ToLower() == "leave")
                 {
@@ -124,27 +124,8 @@ namespace SpaceConsole
                 }
 
             } while (exitA == true);
-        }
-        public static void BuyItems()
-            {
-                Console.Clear();
-                Console.WriteLine("Which item would you like to buy {0}?  Please use the intergers only!\n", Inventory.userName);
-                Console.WriteLine("===========================================");
-                Console.WriteLine("\n\t1 Water\n\t2 Food\n\t3 Fuel" +
-                                  "\n\t4 Common Mineral\n\t5 Medical Supplies\n\t6 Technology" +
-                                  "\n\t7 Weapons\n\t8 Rare Material\n\t9 Dark Matter\n");
-                Console.WriteLine("===========================================");          
-        }
-        public static void SellItems()
-        {
-            Console.WriteLine("Which item would you like to sell {0}\n", Inventory.userName);
-            Console.WriteLine("===========================================");
-            Console.WriteLine("\t1 Water\n\t2 Food\n\t3 Fuel" +
-                                 "\n\t4 Common Mineral\n\t5 Medical Supplies\n\t6 Technology\n" +
-                                  "\t7 Weapons\n\t8 Rare Material\n\t9 Dark Matter\n");
-            Console.WriteLine("===========================================");
-            //need to add a selection here
-        }
+        }       
+        
         public static void Leave()
         {
             Console.WriteLine("{0}, are you sure you want to leave the Trading Post?\n" + "Yes or No\n" , Inventory.userName);

@@ -9,6 +9,9 @@ namespace SpaceConsole
     class Program
     {
         public static bool exit = false;
+
+        public static object BuyItems { get; internal set; }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Space Traders 9000. \n");
