@@ -24,7 +24,6 @@ namespace SpaceConsole
                 Console.ReadLine();
                 EndCheck();
             }
-
         }
         public static void EndCheck()
         {
@@ -34,7 +33,8 @@ namespace SpaceConsole
                 Console.Clear();
                 Console.WriteLine("The time has come to pay off your debt!");
                 Console.WriteLine("You didn't make enough money to pay it all off! The banks sent bounty hunters after you!");
-                Console.WriteLine("Your dead!", Console.ForegroundColor = ConsoleColor.DarkRed);
+                Console.WriteLine("Your dead!", Console.ForegroundColor = ConsoleColor.Red);
+                End.GameOver();
             }
         }
 
