@@ -16,6 +16,9 @@ namespace SpaceConsole
             Console.WriteLine("Credits currently owned : {0}", Inventory.pCredits);
             Console.WriteLine("Your total credits earned: {0}", Inventory.totalCredits);
             Console.WriteLine("Total distance traveled: {0}", Inventory.totalDistance);
+            Console.WriteLine("Press enter to quit.");
+            Console.ReadLine();
+            Program.exitChoice = true;
         }
     }
 }

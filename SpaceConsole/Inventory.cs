@@ -24,7 +24,7 @@ namespace SpaceConsole
             }
             else if (CargoSpace.Count < maxCargoSize)
             {
-                Console.WriteLine("Adding {0} to your cargo.");
+                Console.WriteLine("Adding {0} to your cargo.", boughtItem);
                 CargoSpace.Add(boughtItem);
             }
         }
@@ -36,7 +36,6 @@ namespace SpaceConsole
 
         public static void CheckInventory()
         {
-            maxCargoSize = Ship.curShipSize;
             Console.WriteLine("You are {0} years old.", age);
             Console.WriteLine("You have {0} credits.", pCredits);
             Console.WriteLine("You are at {0}", currentPlanet);

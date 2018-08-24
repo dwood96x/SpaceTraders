@@ -8,7 +8,7 @@ namespace SpaceConsole
 {
     class Program
     {
-        public static bool exit = false;
+        public static bool exitChoice = false;
 
         public static object BuyItems { get; internal set; }
 
@@ -21,9 +21,6 @@ namespace SpaceConsole
 
             /* Test functions :
             Warp.WarpTo(2, Inventory.currentPlanet);
-            Time.TimePassed();
-            Console.WriteLine(userName);
-            Warp.WarpSpeed(Warp.CurrentSpeed());
             Inventory.checkInventory();
             PlanetTP.EarthTP();
             */
@@ -33,7 +30,6 @@ namespace SpaceConsole
 
         public static void MainMenu()
         {
-            bool exitChoice = false;
             do
             {
                 Console.Clear();
