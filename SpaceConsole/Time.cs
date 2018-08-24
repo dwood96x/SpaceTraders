@@ -40,18 +40,49 @@ namespace SpaceConsole
                     Console.WriteLine("A shadowy figure approaches.");
                     Console.WriteLine("Wow thats a lot of credits you made there buddy.");
                     Console.WriteLine("You really were trying to make it out alive huh?");
-                    Console.WriteLine("Its a real shame you dont have really have enough money though.");
+                    Console.WriteLine("Its a real shame, you dont have enough money.\n");
                     Console.WriteLine("What? You didn't think we charged INTEREST? Of course we did!");
-                    Console.WriteLine("At 5% per year too! Whats wrong dont have 7,039,988 credits");
-                    Console.WriteLine("Guess well just reposses your ship and kill you then.");
+                    Console.WriteLine("At 5% per year too! Whats wrong you don't have 7,039,988 credits?");
+                    Console.WriteLine("Guess we'll just reprocess your ship and well......... kill you.");
                     Console.WriteLine("Press ENTER to continue");
                     Console.ReadLine();
                 }
                 else if (Inventory.pCredits < 1000000)
                 {
-                    Console.WriteLine("A shadow figure approaches.");
-                    Console.WriteLine("You tried to pay us with THAT measily amount of credits?!? \n Don't worry we'll make sure you pay... \n" +
-                        "Press ENTER to continue");
+                    Console.WriteLine("", Console.ForegroundColor = ConsoleColor.Green);
+                    string shadow = ("\nA shadow figure approaches.\n\n");
+                        
+                    for (int i = 0; i < shadow.Length; i++)
+                    {
+                        Console.Write(shadow[i]);
+                        System.Threading.
+                        Thread.Sleep(60);
+                    }
+                    string message = ("\nYou tried to pay us with THAT measily amount of credits?!?\n\n");
+                    for (int i = 0; i < message.Length; i++)
+                    {
+                        Console.Write(message[i]);
+                        System.Threading.
+                        Thread.Sleep(60);
+                    }
+                    string debt = ("Don't worry, you still get to pay off your debt......");
+                    for (int i = 0; i < message.Length; i++)
+                    {
+                        Console.Write(message[i]);
+                        System.Threading.
+                        Thread.Sleep(60);
+                    }
+                    Console.ReadLine();
+                    Console.Clear();
+                    string soul = ("WITH YOUR SOUL!!!");
+                    for (int i = 0; i < debt.Length; i++)
+                    {
+                        Console.Write(debt[i]);
+                        System.Threading.
+                        Thread.Sleep(60);
+                    }
+
+                    Console.WriteLine("Press ENTER to continue");
                     Console.ReadLine();
                 }
 
@@ -62,3 +93,4 @@ namespace SpaceConsole
 
     }
 }
+                        
