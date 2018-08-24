@@ -15,7 +15,7 @@ namespace SpaceConsole
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Space Traders 9000. \n");
-            Inventory.userName = Intro.StartPoint();
+            Intro.StartPoint();
             MainMenu();
  
 

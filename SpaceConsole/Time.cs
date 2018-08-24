@@ -24,7 +24,6 @@ namespace SpaceConsole
                 Console.ReadLine();
                 EndCheck();
             }
-
         }
         public static void EndCheck()
         {

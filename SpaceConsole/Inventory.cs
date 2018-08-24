@@ -15,6 +15,7 @@ namespace SpaceConsole
         public static string currentPlanet;
         public static List<string> CargoSpace = new List<string>();
         public static double maxCargoSize = Ship.curShipSize;
+        public static int totalCredits;
         public static void AddCargo(string boughtItem)
         {
             if (CargoSpace.Count == maxCargoSize)

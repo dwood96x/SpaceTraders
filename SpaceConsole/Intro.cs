@@ -76,6 +76,7 @@ namespace SpaceConsole
             Time.daysPassed = 0;
             Inventory.totalDistance = 0;
             Inventory.currentPlanet = "Earth";
+            Inventory.userName = userName;
 
         }
     }

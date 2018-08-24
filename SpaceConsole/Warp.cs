@@ -52,6 +52,7 @@ namespace SpaceConsole
             // Calculates time to get to destination in days
             travTime = distance / WarpSpeed(CurrentSpeed()) * 365;
             Console.WriteLine("It will take {0:F2} days to get to the destination", travTime);
+            Inventory.totalDistance += distance;
         }
         public static void WarpTo(int toPlanet, string fromPlanet)
         {
@@ -88,6 +89,8 @@ namespace SpaceConsole
                 TravelTime(10.44);
                 Inventory.currentPlanet = "Alpha Centauri";
             }
+            Console.WriteLine("Press enter to continue.");
+            Console.ReadLine();
             Time.TimePassed();
         }
     }

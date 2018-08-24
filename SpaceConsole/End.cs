@@ -13,7 +13,9 @@ namespace SpaceConsole
             Console.WriteLine("Game over!");
             Console.WriteLine("Press enter to see your stats.");
             Console.ReadLine();
-            
+            Console.WriteLine("Credits currently owned : {0}", Inventory.pCredits);
+            Console.WriteLine("Your total credits earned: {0}", Inventory.totalCredits);
+            Console.WriteLine("Total distance traveled: {0}", Inventory.totalDistance);
         }
     }
 }
