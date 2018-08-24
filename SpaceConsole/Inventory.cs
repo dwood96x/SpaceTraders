@@ -40,7 +40,7 @@ namespace SpaceConsole
             Console.WriteLine("You have {0} credits.", pCredits);
             Console.WriteLine("You are at {0}", currentPlanet);
             Console.WriteLine("--------------------------------------");
-            Console.WriteLine("Your {0} has a max cargo space of {1}", Ship.shipName, maxCargoSize );
+            Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", Ship.shipName, maxCargoSize );
             Console.WriteLine("--------------------------------------");
             foreach (var a in CargoSpace)
                 Console.WriteLine(a);

@@ -38,7 +38,7 @@ namespace SpaceConsole
             {
                 Console.Clear();
                 Console.WriteLine("You are in your ship orbiting {0}", Inventory.currentPlanet);
-                Console.WriteLine("\nYou can go to the Trade Post, Travel, Check your Inventory (stats), or Exit");
+                Console.WriteLine("\nYou can go to the Trade Post, Travel, Inventory, or Exit");
                 string input = Console.ReadLine();
                 if (input.ToLower() == "trade post")
                 {
@@ -81,7 +81,7 @@ namespace SpaceConsole
                     }
                     Warp.WarpTo(travelChoice, Inventory.currentPlanet);
                 }
-                else if (input.ToLower() == "stats")
+                else if (input.ToLower() == "inventory")
                 {
                     Inventory.CheckInventory();
                 }

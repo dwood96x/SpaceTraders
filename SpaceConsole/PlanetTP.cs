@@ -51,8 +51,13 @@ namespace SpaceConsole
                 }
                 else
                 {
-                    Console.WriteLine("You answer is invaild, please try again");
-                    
+                    string invaild = "\nYou answer is invaild, please try again\n";
+                    for (int i = 0; i < invaild.Length; i++)
+                    {
+                        Console.Write(invaild[i]);
+                        System.Threading.
+                        Thread.Sleep(60);
+                    }                    
                 }
 
             } while (exitA == true);
@@ -152,18 +157,18 @@ namespace SpaceConsole
         
         public static void Leave()
         {
-            Console.WriteLine("{0}, are you sure you want to leave the Trading Post?\n" + "Yes or No\n" , Inventory.userName);
+            Console.WriteLine("\n{0}, are you sure you want to leave the Trading Post?\n" + "Yes or No\n" , Inventory.userName);
             string userInput = Console.ReadLine();
 
             if (userInput.ToLower() == "yes")
             {
-                exitA = true;
+                exitA = false;               
             }
             else
             {
 
             }
-
+            
         }
     }
 }
