@@ -89,7 +89,7 @@ namespace SpaceConsole
                 TravelTime(10.44);
                 Inventory.currentPlanet = "Alpha Centauri";
             }
-            Console.WriteLine("Press enter to continue.");
+            Console.WriteLine("Press ENTER to continue.");
             Console.ReadLine();
             Time.TimePassed();
         }

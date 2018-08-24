@@ -29,10 +29,32 @@ namespace SpaceConsole
         {
             if (Inventory.age >= 60)
             {
-                // TODO - Needs story
+                // TODO - Needs more story
                 Console.Clear();
                 Console.WriteLine("The time has come to pay off your debt!");
-                Console.WriteLine("You didn't make enough money to pay it all off! The banks sent bounty hunters after you!");
+                Console.WriteLine("You send your credits to the debt collection agency.");
+                Console.WriteLine("Press ENTER to see your fate");
+                Console.ReadLine();
+                if (Inventory.pCredits >= 1000000)
+                {
+                    Console.WriteLine("A shadowy figure approaches.");
+                    Console.WriteLine("Wow thats a lot of credits you made there buddy.");
+                    Console.WriteLine("You really were trying to make it out alive huh?");
+                    Console.WriteLine("Its a real shame you dont have really have enough money though.");
+                    Console.WriteLine("What? You didn't think we charged INTEREST? Of course we did!");
+                    Console.WriteLine("At 5% per year too! Whats wrong dont have 7,039,988 credits");
+                    Console.WriteLine("Guess well just reposses your ship and kill you then.");
+                    Console.WriteLine("Press ENTER to continue");
+                    Console.ReadLine();
+                }
+                else if (Inventory.pCredits < 1000000)
+                {
+                    Console.WriteLine("A shadow figure approaches.");
+                    Console.WriteLine("You tried to pay us with THAT measily amount of credits?!? \n Don't worry we'll make sure you pay... \n" +
+                        "Press ENTER to continue");
+                    Console.ReadLine();
+                }
+
                 Console.WriteLine("Your dead!", Console.ForegroundColor = ConsoleColor.Red);
                 End.GameOver();
             }

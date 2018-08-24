@@ -15,6 +15,7 @@ namespace SpaceConsole
             Console.ReadLine();
             Console.WriteLine("Credits currently owned : {0}", Inventory.pCredits);
             Console.WriteLine("Your total credits earned: {0}", Inventory.totalCredits);
+            Console.WriteLine("Credits needed to pay off debt: {0}", (7039988 - Inventory.pCredits));
             Console.WriteLine("Total distance traveled: {0}", Inventory.totalDistance);
             Console.WriteLine("Press enter to quit.");
             Console.ReadLine();
