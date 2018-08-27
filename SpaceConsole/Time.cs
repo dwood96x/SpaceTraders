@@ -66,26 +66,25 @@ namespace SpaceConsole
                         Thread.Sleep(60);
                     }
                     string debt = ("Don't worry, you still get to pay off your debt......");
-                    for (int i = 0; i < message.Length; i++)
-                    {
-                        Console.Write(message[i]);
-                        System.Threading.
-                        Thread.Sleep(60);
-                    }
-                    Console.ReadLine();
-                    Console.Clear();
-                    string soul = ("WITH YOUR SOUL!!!");
                     for (int i = 0; i < debt.Length; i++)
                     {
                         Console.Write(debt[i]);
                         System.Threading.
                         Thread.Sleep(60);
                     }
-
+                    Console.ReadLine();
+                    Console.Clear();
+                    Console.WriteLine("", Console.ForegroundColor = ConsoleColor.Red);
+                    string soul = ("WITH YOUR SOUL!!!\n\n");
+                    for (int i = 0; i < soul.Length; i++)
+                    {
+                        Console.Write(soul[i]);
+                        System.Threading.
+                        Thread.Sleep(60);
+                    }
                     Console.WriteLine("Press ENTER to continue");
                     Console.ReadLine();
                 }
-
                 Console.WriteLine("Your dead!", Console.ForegroundColor = ConsoleColor.Red);
                 End.GameOver();
             }
