@@ -71,11 +71,14 @@ namespace SpaceConsole
                     }
                     else
                     {
-                        Console.WriteLine("You are already on that planet!");
+                        Console.WriteLine("Invalid selection, your either already on that planet or you spelled it incorrectly.");
                         Console.WriteLine("Press enter to continue");
                         Console.ReadLine();
                     }
-                    Warp.WarpTo(travelChoice, Inventory.currentPlanet);
+                    if (travelChoice != 0)
+                    {
+                        Warp.WarpTo(travelChoice, Inventory.currentPlanet);
+                    }
                 }
                 else if (input.ToLower() == "inventory")
                 {

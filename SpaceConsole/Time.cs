@@ -14,11 +14,21 @@ namespace SpaceConsole
             daysPassed += Warp.travTime;
             if (daysPassed >= 365)
             {
-                // TODO - Needs to account for multiple years passing in 1 travel
-                //Inventory.age += (Convert.ToInt32(daysPassed)/365);
-                Inventory.age += 1;
-                daysPassed -= 365;
-                Console.WriteLine("One year has passed. You are now {0} years old.", Inventory.age);
+                if (daysPassed >= 730)
+                {
+                    int yearsPassed = (Convert.ToInt32(daysPassed) / 365);
+                    Inventory.age += yearsPassed;
+                    daysPassed -= yearsPassed * 365;
+                    Console.WriteLine("{1} years passed. You are now {0} years old.", Inventory.age, yearsPassed);
+                }
+                else if (daysPassed < 730)
+                {
+                    Inventory.age += 1;
+                    daysPassed -= 365;
+                    Console.WriteLine("One year has passed. You are now {0} years old.", Inventory.age);
+                }
+
+
                 Console.WriteLine("\nYou have {0} years left to pay off your debt.", (60 - Inventory.age));
                 Console.WriteLine("Press enter to continue");
                 Console.ReadLine();
