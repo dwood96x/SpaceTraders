@@ -92,6 +92,7 @@ namespace SpaceConsole
             Console.WriteLine("Press ENTER to continue.");
             Console.ReadLine();
             Time.TimePassed();
+            travTime = 0;
         }
     }
 }
