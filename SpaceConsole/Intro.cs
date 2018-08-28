@@ -70,7 +70,7 @@ namespace SpaceConsole
             Console.WriteLine("Good luck.\n");
             Console.WriteLine("Press ENTER to continue");
             Console.ReadLine();
-            Inventory.age = 20;
+            Inventory.age = 59;
             Inventory.pCredits = 2000;
             Ship.Krillan();
             Inventory.maxCargoSize = Ship.curShipSize;
