@@ -27,56 +27,73 @@ namespace SpaceConsole
             Console.WriteLine("=========================================");
             string input = Console.ReadLine();
 
-            switch (input)
-            {
-                case "water":
+            
+            switch (input.ToLower())
+            {                    
+                    case "water":
+                    int water;
                     Console.WriteLine("\nHow much water would you like to buy?\n");
-                    string water = Console.ReadLine();                    
+                    string w = Console.ReadLine();
+                    water = int.Parse(w);                    
                     break;
                 case "food":
+                    int food;
                     Console.WriteLine("\nHow much Food would you like to buy?\n");
-                    string food = Console.ReadLine();
+                    string f = Console.ReadLine();
+                    food = int.Parse(f);
                     break;
                 case "fuel":
+                    int fuel;
                     Console.WriteLine("\nHow much Fuel would you like to buy?\n");
-                    string fuel = Console.ReadLine();
+                    string fl = Console.ReadLine();
+                    fuel = int.Parse(fl);
                     break;
                 case "common mineral":
+                    int commonMineral;
                     Console.WriteLine("\nHow much Common Mineral would you like to buy?\n");
-                    string commonMineral = Console.ReadLine();
+                    string cm = Console.ReadLine();
+                    commonMineral = int.Parse(cm);
                     break;
                 case "medical supplies":
+                    int medicalSupplies;
                     Console.WriteLine("\nHow much Medical Supplies would you like to buy?\n");
-                    string medicalSupplies = Console.ReadLine();
+                    string ms = Console.ReadLine();
+                    medicalSupplies = int.Parse(ms);
                     break;
                 case "technology":
+                    int technology;
                     Console.WriteLine("\nHow much Technology would you like to buy?\n");
-                    string technology = Console.ReadLine();
+                    string t = Console.ReadLine();
+                    technology = int.Parse(t);                    
                     break;
                 case "weapons":
+                    int weapons;
                     Console.WriteLine("\nHow many Weapons would you like to buy?\n");
-                    string weapons = Console.ReadLine();
+                    string we = Console.ReadLine();
+                    weapons = int.Parse(we);
                     break;
                 case "rare material":
+                    int rareMaterial;
                     Console.WriteLine("\nHow much Rare Material would you like to buy?\n");
-                    string rareMaterial = Console.ReadLine();
+                    string rm = Console.ReadLine();
+                    rareMaterial = int.Parse(rm);
                     break;
                 case "dark matter":
+                    int darkMatter;
                     Console.WriteLine("\nHow much Dark Matter would you like to buy?\n");
-                    string darkMatter = Console.ReadLine();
+                    string dm = Console.ReadLine();
+                    darkMatter = int.Parse(dm);
                     break;
                 case "leave":
-                    //need to get back to the current planet's options
+                    PlanetTP.Leave();
                     break;
                 default:
                     Console.WriteLine("\nYou have enter an invaild item, please check your itema and try again.\n");
                     break;
             }
-
-        }
-        public static void userInput(string input)
-        {
-            
-        }        
+            // take user input on how much they want and multiply it by that item price
+            // take the over all price of the above and make sure user has enough to pay
+            // is user does not have enough to money, tell user and return to how much they want to buy
+        }                
     }
 }
