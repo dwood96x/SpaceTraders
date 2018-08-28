@@ -37,7 +37,19 @@ namespace SpaceConsole
         }
         public static void EndCheck()
         {
-            if (Inventory.age >= 60)
+            if (Inventory.pCredits <= 0)
+            {
+                Console.Clear();
+                Console.WriteLine("You get ambushed by pirates!");
+                Console.WriteLine("The captain of the pirate crew demands all the credits you have!");
+                Console.WriteLine("Realizing your account is empty you soon after get boarded by the pirates!");
+                Console.WriteLine("They easily overpower you and take over the ship, forcing you to be their space slave!");
+                Console.WriteLine("Months go by until you hear the sound of laser fire rocking the ship!");
+                Console.WriteLine("You look out a window and see police cruisers!");
+                Console.WriteLine("Press enter to continue");
+                Console.WriteLine("PEW a laser hit the window you where at!");
+            }
+            else if (Inventory.age >= 60)
             {
                 // TODO - Needs more story
                 Console.Clear();
@@ -98,6 +110,7 @@ namespace SpaceConsole
                 Console.WriteLine("Your dead!", Console.ForegroundColor = ConsoleColor.Red);
                 End.GameOver();
             }
+
         }
 
     }
