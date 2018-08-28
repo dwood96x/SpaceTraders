@@ -31,8 +31,7 @@ namespace SpaceConsole
             {
                 case "water":
                     Console.WriteLine("\nHow much water would you like to buy?\n");
-                    string water = Console.ReadLine();
-                    int a = Convert.ToInt32(water);
+                    string water = Console.ReadLine();                    
                     break;
                 case "food":
                     Console.WriteLine("\nHow much Food would you like to buy?\n");
