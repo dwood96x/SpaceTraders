@@ -10,22 +10,17 @@ namespace SpaceConsole
     {
         public static bool exitChoice = false;
 
-        public static object BuyItems { get; internal set; }
-
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Space Traders 9000. \n");
             Intro.StartPoint();
             MainMenu();
  
-
             /* Test functions :
             Warp.WarpTo(2, Inventory.currentPlanet);
             Inventory.checkInventory();
             PlanetTP.EarthTP();
             */
-
-
         }
 
         public static void MainMenu()
