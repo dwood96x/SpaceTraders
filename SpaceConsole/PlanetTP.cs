@@ -8,7 +8,6 @@ namespace SpaceConsole
 {
     class PlanetTP
     {
-        //string[] TpList = new string[] {" ", "Water","Food","Fuel","Common Mineral","Medical Supplies","Technology","Weapons","Rare Material","Dark Matter"};
         public static bool exitA = true;
         public static void EarthTP()
         {
