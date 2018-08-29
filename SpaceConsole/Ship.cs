@@ -14,7 +14,7 @@ namespace SpaceConsole
         public double ShipCost;
         public double MaxFuel;
 
-        public Ship(string shipName = "", double maxSpeed = 1, double curShipSize = 1, double shipCost = 100, double maxFuel = 10)
+        public Ship(string shipName, double maxSpeed, double curShipSize, double shipCost, double maxFuel)
         {
             ShipName = shipName;
             MaxSpeed = maxSpeed;
