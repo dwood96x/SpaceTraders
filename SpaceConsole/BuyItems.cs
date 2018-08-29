@@ -210,10 +210,10 @@ namespace SpaceConsole
                     //leave method
                 }
             }
-            else if (input.ToLower() == "food")
+            else if (input.ToLower() == "dark matter")
             {
                 int darkMatter;
-                Console.Write("How much Water would you like to buy?\n");
+                Console.Write("How much Dark Matter would you like to buy?\n");
                 string dark = Console.ReadLine();
                 darkMatter = int.Parse(dark);
                 int total = darkMatter * 100000;
@@ -239,7 +239,7 @@ namespace SpaceConsole
             else
             {
                 Console.WriteLine("Invalid selection, please try again.\n");
-                Console.WriteLine("Press enter to continue");
+                Console.WriteLine("Press ENTER` to continue");
                 Console.ReadLine();
                 Console.Clear();
             }            
