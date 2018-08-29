@@ -46,6 +46,7 @@
     <Compile Include="End.cs" />
     <Compile Include="Intro.cs" />
     <Compile Include="Inventory.cs" />
+    <Compile Include="Planet.cs" />
     <Compile Include="PlanetTP.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
