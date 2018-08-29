@@ -14,8 +14,12 @@ namespace SpaceConsole
         public static double totalDistance;
         public static string currentPlanet;
         public static List<string> CargoSpace = new List<string>();
-        public static double maxCargoSize = Ship.curShipSize;
+        public static double maxCargoSize;
         public static int totalCredits;
+        public static void SetMaxCargo(Ship shipname)
+        {
+            maxCargoSize = shipname.CurShipSize;
+        }
         public static void AddCargo(string boughtItem)
         {
             if (CargoSpace.Count == maxCargoSize)
@@ -34,13 +38,13 @@ namespace SpaceConsole
             Console.WriteLine("{0} removed from cargo.", removeItem);
         }
 
-        public static void CheckInventory()
+        public static void CheckInventory(Ship shipname)
         {
             Console.WriteLine("You are {0} years old.", age);
             Console.WriteLine("You have {0} credits.", pCredits);
             Console.WriteLine("You are at {0}", currentPlanet);
             Console.WriteLine("--------------------------------------");
-            Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", Ship.shipName, maxCargoSize );
+            Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", shipname.ShipName, maxCargoSize );
             Console.WriteLine("--------------------------------------");
             foreach (var a in CargoSpace)
                 Console.WriteLine(a);

@@ -6,46 +6,75 @@ using System.Threading.Tasks;
 
 namespace SpaceConsole
 {
-    class Ship
+    public class Ship
     {
-        public static string shipName;
-        public static double maxSpeed;
-        public static double curShipSize;
-        public static double shipCost;
-        public static double maxFuel;
+        public string ShipName;
+        public double MaxSpeed;
+        public double CurShipSize;
+        public double ShipCost;
+        public double MaxFuel;
 
-        public static void Krillan()
+        public Ship(string shipName = "", double maxSpeed = 1, double curShipSize = 1, double shipCost = 100, double maxFuel = 10)
         {
-            shipName = "Krillan";
-            maxSpeed = 3;
-            curShipSize = 3;
-            shipCost = 2000;
-            maxFuel = 10;
+            ShipName = shipName;
+            MaxSpeed = maxSpeed;
+            CurShipSize = curShipSize;
+            ShipCost = shipCost;
+            MaxFuel = maxFuel;
         }
-        public static void Piccolo()
+        /*
+        public string GetShipName()
         {
-            shipName = "Piccolo";
-            maxSpeed = 5;
-            curShipSize = 6;
-            shipCost = 15000;
-            maxFuel = 15;
+            return ShipName;
         }
-        public static void Vegito()
+        public double GetMaxSpeed()
         {
-            shipName = "Vegito";
-            maxSpeed = 7;
-            curShipSize = 9;
-            shipCost = 50000;
-            maxFuel = 20;
+            return MaxSpeed;
         }
-        public static void MajinBuu()
+        public double GetShipSize()
         {
-            shipName = "Majin Buu";
-            maxSpeed = 6;
-            curShipSize = 12;
-            shipCost = 100000;
-            maxFuel = 25;
+            return CurShipSize;
         }
-
+        public double GetShipCost()
+        {
+            return ShipCost;
+        }
+        public double GetShipMaxFuel()
+        {
+            return MaxFuel;
+        }
+        public void Krillan()
+        {
+            ShipName = "Krillan";
+            MaxSpeed = 3;
+            CurShipSize = 3;
+            ShipCost = 2000;
+            MaxFuel = 10;
+        }
+        public void Piccolo()
+        {
+            ShipName = "Piccolo";
+            MaxSpeed = 5;
+            CurShipSize = 6;
+            ShipCost = 15000;
+            MaxFuel = 15;
+        }
+        public void Vegito()
+        {
+            ShipName = "Vegito";
+            MaxSpeed = 7;
+            CurShipSize = 9;
+            ShipCost = 50000;
+            MaxFuel = 20;
+        }
+        public void MajinBuu()
+        {
+            ShipName = "Majin Buu";
+            MaxSpeed = 6;
+            CurShipSize = 12;
+            ShipCost = 100000;
+            MaxFuel = 25;
+        }
+        */
     }
 }
