@@ -8,33 +8,28 @@ namespace SpaceConsole
 {
     class Planet
     {
-        //public double a;
-        //public double b;
-        //public double c;
-        //public void distance(Planet currentPlant, Planet destination)
-        //{
-        //    a = currentPlant.xCoord - destination.xCoord;
-        //    b = currentPlant.yCoord - destination.xCoord;
-        //    c = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2.0));
-        //}
+        public double xCoord;
+        public double yCoord;
+        public string planetName;
+        public static double a;
+        public static double b;
 
-        //{
-        //    Planet earth = new Planet(0, 0, "Earth");
-        //Planet ac = new Planet(0, -4.367, "Alpha Centurion");
-        //Planet m63 = new Planet(-4.6, 5, "M63");
-        //Planet p100 = new Planet(-30, -30, "P100");
-        //Planet grenonus = new Planet(-36, -23, "Grenonus");
-        //Planet derioa = new Planet(-13, 12, "Derioa");
-        //Planet esides = new Planet(6, 35, "Esides");
-        //Planet geitov = new Planet(-28, 38, "Geirtov");
-        //Planet currentLocation = earth;
+        public Planet(double x, double y, string pn)
+        {
+            xCoord = x;
+            yCoord = y;
+            planetName = pn;
+        }
+        public static double Distance(Planet currentPlant, Planet destination)
+        {
+            a = currentPlant.xCoord - destination.xCoord;
+            b = currentPlant.yCoord - destination.xCoord;
+            return Math.Sqrt(Math.Pow(a, 2.0) + Math.Pow(b, 2.0));
+        }
 
-        //Travel travel = new Travel();
-        //travel.distance(currentLocation, ac);
-        //}
-        
 
-        //This is the formula and coords for the 8 planets.
-        //Need to pass to program and intergrate to current code.
-}
+
+    //This is the formula and coords for the 8 planets.
+    //Need to pass to program and intergrate to current code.
+    }
 }
