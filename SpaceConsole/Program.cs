@@ -9,12 +9,14 @@ namespace SpaceConsole
     class Program
     {
         public static bool exitChoice = false;
-
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Space Traders 9000. \n");
             Intro.StartPoint();
-            MainMenu();
+            // Next lines set initial game conditions
+            Ship playerShip = new Ship("Krillan", 3, 4, 5000, 10);
+            Inventory.SetMaxCargo(playerShip);
+            MainMenu(playerShip);
  
             /* Test functions :
             Warp.WarpTo(2, Inventory.currentPlanet);
@@ -23,7 +25,7 @@ namespace SpaceConsole
             */
         }
 
-        public static void MainMenu()
+        public static void MainMenu(Ship shipname)
         {
             do
             {
@@ -72,12 +74,12 @@ namespace SpaceConsole
                     }
                     if (travelChoice != 0)
                     {
-                        Warp.WarpTo(travelChoice, Inventory.currentPlanet);
+                        Warp.WarpTo(travelChoice, Inventory.currentPlanet, shipname);
                     }
                 }
                 else if (input.ToLower() == "inventory")
                 {
-                    Inventory.CheckInventory();
+                    Inventory.CheckInventory(shipname);
                 }
                 else if (input.ToLower() == "exit")
                 {
