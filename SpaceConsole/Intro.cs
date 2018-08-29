@@ -73,8 +73,6 @@ namespace SpaceConsole
             Inventory.age = 20;
             Inventory.pCredits = 2000;
             
-            //Inventory.maxCargoSize =
-
             Time.daysPassed = 0;
             Inventory.totalDistance = 0;
             Inventory.currentPlanet = "Earth";
