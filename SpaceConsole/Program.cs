@@ -8,6 +8,8 @@ namespace SpaceConsole
 {
     class Program
     {
+        public string ItemName;
+        public int ItemPrice;
         public static bool exitChoice = false;
         static void Main(string[] args)
         {
@@ -129,6 +131,8 @@ namespace SpaceConsole
 
 
             } while (exitChoice == false);
+        
+        
         }
     }
     //Following method used to add objects to list from ArkaneX at https://answers.unity.com/questions/524128/c-adding-multiple-elements-to-a-list-on-one-line.html
