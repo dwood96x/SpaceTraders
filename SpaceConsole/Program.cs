@@ -8,6 +8,8 @@ namespace SpaceConsole
 {
     class Program
     {
+        public string ItemName;
+        public int ItemPrice;
         public static bool exitChoice = false;
         static void Main(string[] args)
         {
@@ -90,6 +92,8 @@ namespace SpaceConsole
 
 
             } while (exitChoice == false);
+        
+        
         }
     }
 }
