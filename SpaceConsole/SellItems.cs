@@ -11,14 +11,29 @@ namespace SpaceConsole
         public static void SItems(Inventory inventory)
         {
             Console.Clear();
-            Console.WriteLine("Which item would you like to sell {0}? Please select using intergers only!\n", inventory.userName);
-            Console.WriteLine("==================================");
-            Console.WriteLine("\n\t1 Water\n\t2 Food\n\t3 Fuel" +
-                              "\n\t4 Common Mineral\n\t5 Medical Supplies\n\t6 Technology" +
-                              "\n\t7 Weapons\n\t8 Rare Material\n\t9 Dark Matter\n" +
-                              "\n\t0 I do not want to sell anything!!!");
-            Console.WriteLine("==================================");
-            //need to add a selection here
+            Console.WriteLine("Which item would you like to sell {0}?\n", inventory.userName);
+            Console.WriteLine("==============================================");
+            Console.WriteLine("\n\t Water -                     700c" +
+                              "\n\t Food -                      840c" +
+                              "\n\t Common Mineral -           3500c" +
+                              "\n\t Medical Supplies -         7000c" +
+                              "\n\t Technology -              10500c" +
+                              "\n\t Weapon -                  14000c" +
+                              "\n\t Rare Material -           52500c" +
+                              "\n\t Dark Matter -             70000c" +
+                              "\n" +
+                              "\n\t Leave\n");
+            Console.WriteLine("==============================================");
+            string input = Console.ReadLine();
+
+           
+            //else
+            //{
+            //    Console.WriteLine("Invalid selection, please try again.\n");
+            //    Console.WriteLine("Press ENTER` to continue");
+            //    Console.ReadLine();
+            //    Console.Clear();
+            //}
         }
     }
 }
