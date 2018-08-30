@@ -9,7 +9,7 @@ namespace SpaceConsole
     class PlanetTP
     {
         public static bool exitA = true;
-        public static void EarthTP()
+        public static void EarthTP(Inventory inventory)
         {
             string earth = "\nWelcome to the Trading Post of Earth.\n";
             for (int i = 0; i < earth.Length; i++)
@@ -38,20 +38,20 @@ namespace SpaceConsole
 
             do
             {
-                Console.WriteLine("\n{0}, would you like to Buy, Sell, or Leave", Inventory.userName);
+                Console.WriteLine("\n{0}, would you like to Buy, Sell, or Leave", inventory.userName);
                 string userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems.BItems();
+                    BuyItems.BItems(inventory);
                 }
                 else if (userInput.ToLower() == "sell")
                 {
-                    SellItems.SItems();
+                    SellItems.SItems(inventory);
                 }
                 else if (userInput.ToLower() == "leave")
                 {
-                    Leave();                    
+                    Leave(inventory);                    
                 }
                 else
                 {
@@ -66,7 +66,7 @@ namespace SpaceConsole
 
             } while (exitA == true);
         }
-        public static void MyGPTP()
+        public static void MyGPTP(Inventory inventory)
         {
             string MyGPTP = "\nWelcome to the Trading Post of My Great Planet.\n";
             for (int i = 0; i < MyGPTP.Length; i++)
@@ -95,20 +95,20 @@ namespace SpaceConsole
             do
             {
 
-                Console.WriteLine("{0}, would you like to Buy, Sell, or Leave", Inventory.userName);
+                Console.WriteLine("{0}, would you like to Buy, Sell, or Leave", inventory.userName);
                 string userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems.BItems();
+                    BuyItems.BItems(inventory);
                 }
                 else if (userInput.ToLower() == "sell")
                 {
-                    SellItems.SItems();
+                    SellItems.SItems(inventory);
                 }
                 else if (userInput.ToLower() == "leave")
                 {
-                    Leave();
+                    Leave(inventory);
                 }
                 else
                 {
@@ -117,7 +117,7 @@ namespace SpaceConsole
 
             } while (exitA == true);
         }
-        public static void ACTP()
+        public static void ACTP(Inventory inventory)
         {
             string ACTP = "\nWelcome to the Trading Post of Alpha Centauri";
             for (int i = 0; i < ACTP.Length; i++)
@@ -140,20 +140,20 @@ namespace SpaceConsole
             do
             {
 
-                Console.WriteLine("{0}, would you like to Buy, Sell, or Leave", Inventory.userName);
+                Console.WriteLine("{0}, would you like to Buy, Sell, or Leave", inventory.userName);
                 string userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems.BItems();
+                    BuyItems.BItems(inventory);
                 }
                 else if (userInput.ToLower() == "sell")
                 {
-                    SellItems.SItems();
+                    SellItems.SItems(inventory);
                 }
                 else if (userInput.ToLower() == "leave")
                 {
-                    Leave();
+                    Leave(inventory);
                 }
                 else
                 {
@@ -164,9 +164,9 @@ namespace SpaceConsole
             } while (exitA == true);
         }       
         
-        public static void Leave()
+        public static void Leave(Inventory inventory)
         {
-            Console.WriteLine("\n{0}, are you sure you want to leave the Trading Post?\n" + "Yes or No\n" , Inventory.userName);
+            Console.WriteLine("\n{0}, are you sure you want to leave the Trading Post?\n" + "Yes or No\n" , inventory.userName);
             string userInput = Console.ReadLine();
 
             if (userInput.ToLower() == "yes")

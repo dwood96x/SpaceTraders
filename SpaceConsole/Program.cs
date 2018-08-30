@@ -43,7 +43,7 @@ namespace SpaceConsole
             Inventory.SetMaxCargo(playerShip);
 
             Intro.StartPoint(pInventory);
-            //MainMenu(playerShip);
+            MainMenu(playerShip, pInventory);
 
             /* Test functions :
             Warp.WarpTo(2, inventory.currentPlanet);
@@ -65,15 +65,15 @@ namespace SpaceConsole
                 {
                     if (inventory.currentPlanet == "Earth")
                     {
-                        PlanetTP.EarthTP();
+                        PlanetTP.EarthTP(inventory);
                     }
                     else if (inventory.currentPlanet == "My Great Planet")
                     {
-                        PlanetTP.MyGPTP();
+                        PlanetTP.MyGPTP(inventory);
                     }
                     else if (inventory.currentPlanet == "Alpha Centauri")
                     {
-                        PlanetTP.ACTP();
+                        PlanetTP.ACTP(inventory);
                     }
 
                 }

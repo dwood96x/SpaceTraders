@@ -8,10 +8,10 @@ namespace SpaceConsole
 {
     class SellItems
     {
-        public static void SItems()
+        public static void SItems(Inventory inventory)
         {
             Console.Clear();
-            Console.WriteLine("Which item would you like to sell {0}? Please select using intergers only!\n", Inventory.userName);
+            Console.WriteLine("Which item would you like to sell {0}? Please select using intergers only!\n", inventory.userName);
             Console.WriteLine("==================================");
             Console.WriteLine("\n\t1 Water\n\t2 Food\n\t3 Fuel" +
                               "\n\t4 Common Mineral\n\t5 Medical Supplies\n\t6 Technology" +
