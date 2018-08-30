@@ -13,13 +13,22 @@ namespace SpaceConsole
         public static bool exitChoice = false;
         static void Main(string[] args)
         {
+            Planet earth = new Planet(0, 0, "Earth");
+            Planet ac = new Planet(0, -4.367, "Alpha Centurion");
+            Planet m63 = new Planet(-4.6, 5, "M63");
+            Planet p100 = new Planet(-30, -30, "P100");
+            Planet grenonus = new Planet(-36, -23, "Grenonus");
+            Planet derioa = new Planet(-13, 12, "Derioa");
+            Planet esides = new Planet(6, 35, "Esides");
+            Planet geitov = new Planet(-28, 38, "Geirtov");
+
             Console.WriteLine("Welcome to Space Traders 9000. \n");
             Intro.StartPoint();
             // Next lines set initial game conditions
             Ship playerShip = new Ship("Krillan", 3, 4, 5000, 10);
             Inventory.SetMaxCargo(playerShip);
-            MainMenu(playerShip);
- 
+            //MainMenu(playerShip);
+
             /* Test functions :
             Warp.WarpTo(2, Inventory.currentPlanet);
             Inventory.checkInventory();
@@ -51,6 +60,17 @@ namespace SpaceConsole
                     }
 
                 }
+                /*
+                else if (input.ToLower() == "travel")
+                {
+                    Console.WriteLine("Where would you like to warp to?");
+                    for (int i = 0; i < length; i++)
+                    {
+                        Console.WriteLine({Planet})
+                    }
+                }
+                */
+                /*
                 else if (input.ToLower() == "travel")
                 {
                     Console.WriteLine("\nWhere would you like to warp to? \n\tEarth, My Great Planet, or Alpha Centauri?");
@@ -78,7 +98,9 @@ namespace SpaceConsole
                     {
                         Warp.WarpTo(travelChoice, Inventory.currentPlanet, shipname);
                     }
+                    
                 }
+                */
                 else if (input.ToLower() == "inventory")
                 {
                     Inventory.CheckInventory(shipname);

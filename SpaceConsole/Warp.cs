@@ -17,11 +17,13 @@ namespace SpaceConsole
             Console.WriteLine("Your current speed to this planet is {0:F2} C ", warpVel);
             return warpVel;
         }
+        /* Unneeded code
         public static double CalcDistance(double a, double b)
         {
             double distance = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2));
             return distance;
         }
+        */
         public static double CurrentSpeed(Ship shipname)
         {
             //Request whats speed the user wants to go and checks if its valid
@@ -100,5 +102,15 @@ namespace SpaceConsole
             Time.TimePassed();
             travTime = 0;
         }
+        /*
+        public static void WarpToFixed(string toPlanet, string fromPlanet, Ship shipname)
+        {
+            TravelTime(CalcDistance(double xcord, double ycord), shipname);
+            Console.WriteLine("Press ENTER to continue.");
+            Console.ReadLine();
+            Time.TimePassed();
+            travTime = 0;
+        }
+        */
     }
 }
