@@ -55,51 +55,51 @@ namespace SpaceConsole
             } while (acceptedSpeed == false);
             return reqWarp;
         }
-        public static void TravelTime(double distance,Ship shipname)
+        public static void TravelTime(double distance,Ship shipname, Inventory inventory)
         {
             // Calculates time to get to destination in days
             travTime = distance / WarpSpeed(CurrentSpeed(shipname)) * 365;
             Console.WriteLine("It will take {0:F2} days to get to the destination", travTime);
-            Inventory.totalDistance += distance;
+            inventory.totalDistance += distance;
         }
-        public static void WarpTo(int toPlanet, string fromPlanet, Ship shipname)
+        public static void WarpTo(int toPlanet, string fromPlanet, Ship shipname, Inventory inventory)
         {
 
             // earth to mgp 6.794 , earth to AC 4.367, MGP to AC 10.44
             // Earth is (0,0) , My Great Planet is (-4.6, 5) Alpha Centauri is (0, 4.367)
             if (toPlanet == 1 && fromPlanet == "My Great Planet")
             {
-                TravelTime(6.794, shipname);
-                Inventory.currentPlanet = "Earth";
+                TravelTime(6.794, shipname, inventory);
+                inventory.currentPlanet = "Earth";
             }
             else if (toPlanet == 1 && fromPlanet == "Alpha Centauri")
             {
-                TravelTime(4.367, shipname);
-                Inventory.currentPlanet = "Earth";
+                TravelTime(4.367, shipname, inventory);
+                inventory.currentPlanet = "Earth";
             }
             else if (toPlanet == 2 && fromPlanet == "Earth")
             {
-                TravelTime(6.794, shipname);
-                Inventory.currentPlanet = "My Great Planet";
+                TravelTime(6.794, shipname, inventory);
+                inventory.currentPlanet = "My Great Planet";
             }
             else if (toPlanet == 2 && fromPlanet == "Alpha Centauri")
             {
-                TravelTime(10.44, shipname);
-                Inventory.currentPlanet = "My Great Planet";
+                TravelTime(10.44, shipname, inventory);
+                inventory.currentPlanet = "My Great Planet";
             }
             else if (toPlanet == 3 && fromPlanet == "Earth")
             {
-                TravelTime(4.367, shipname);
-                Inventory.currentPlanet = "Alpha Centauri";
+                TravelTime(4.367, shipname, inventory);
+                inventory.currentPlanet = "Alpha Centauri";
             }
             else if (toPlanet == 3 && fromPlanet == "My Great Planet")
             {
-                TravelTime(10.44, shipname);
-                Inventory.currentPlanet = "Alpha Centauri";
+                TravelTime(10.44, shipname, inventory);
+                inventory.currentPlanet = "Alpha Centauri";
             }
             Console.WriteLine("Press ENTER to continue.");
             Console.ReadLine();
-            Time.TimePassed();
+            Time.TimePassed(inventory);
             travTime = 0;
         }
         /*

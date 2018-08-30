@@ -8,7 +8,7 @@ namespace SpaceConsole
 {
     class Intro
     {
-        public static string StartPoint() 
+        public static string StartPoint(Inventory inventory) 
         {
             string userName = null;
             bool invalidUsername = true;
@@ -44,8 +44,8 @@ namespace SpaceConsole
                     else if (userAnswer.ToLower() == "yes")
                     {
                         Console.WriteLine("");
-                        userName = userNameTemp;
-                        BeginSL(userName);
+                        inventory.userName = userNameTemp;
+                        BeginSL(inventory.userName);
                         invalidUsername = false;
                     }
                     else
@@ -70,14 +70,8 @@ namespace SpaceConsole
             Console.WriteLine("Good luck.\n");
             Console.WriteLine("Press ENTER to continue");
             Console.ReadLine();
-            Inventory.age = 20;
-            Inventory.pCredits = 2000;
             
             Time.daysPassed = 0;
-            Inventory.totalDistance = 0;
-            Inventory.currentPlanet = "Earth";
-            Inventory.userName = userName;
-
         }
     }
 }

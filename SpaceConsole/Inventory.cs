@@ -8,14 +8,23 @@ namespace SpaceConsole
 {
     public class Inventory
     {
-        public static string userName;
-        public static int pCredits;
-        public static int age;
-        public static double totalDistance;
-        public static string currentPlanet;
+        public string userName;
+        public int pCredits;
+        public int Age;
+        public double totalDistance;
+        public string currentPlanet;
         public static List<string> CargoSpace = new List<string>();
         public static double maxCargoSize;
-        public static int totalCredits;
+        public int totalCredits;
+        public Inventory(string username, int pcredits, int age, double totaldistance, string Planet, int totalcredits)
+        {
+            userName = username;
+            pCredits = pcredits;
+            Age = age;
+            totalDistance = totaldistance;
+            currentPlanet = Planet;
+            totalCredits = totalcredits;
+        }
         public static void SetMaxCargo(Ship shipname)
         {
             maxCargoSize = shipname.CurShipSize;
@@ -38,11 +47,11 @@ namespace SpaceConsole
             Console.WriteLine("{0} removed from cargo.", removeItem);
         }
 
-        public static void CheckInventory(Ship shipname)
+        public static void CheckInventory(Ship shipname, Inventory inventory)
         {
-            Console.WriteLine("You are {0} years old.", age);
-            Console.WriteLine("You have {0} credits.", pCredits);
-            Console.WriteLine("You are at {0}", currentPlanet);
+            Console.WriteLine("You are {0} years old.", inventory.Age);
+            Console.WriteLine("You have {0} credits.", inventory.pCredits);
+            Console.WriteLine("You are at {0}", inventory.currentPlanet);
             Console.WriteLine("--------------------------------------");
             Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", shipname.ShipName, maxCargoSize );
             Console.WriteLine("--------------------------------------");

@@ -9,7 +9,7 @@ namespace SpaceConsole
     class Time
     {
         public static double daysPassed;
-        public static void TimePassed()
+        public static void TimePassed(Inventory inventory)
         {
             daysPassed += Warp.travTime;
             if (daysPassed >= 365)
@@ -17,27 +17,27 @@ namespace SpaceConsole
                 if (daysPassed >= 730)
                 {
                     int yearsPassed = (Convert.ToInt32(daysPassed) / 365);
-                    Inventory.age += yearsPassed;
+                    inventory.Age += yearsPassed;
                     daysPassed -= yearsPassed * 365;
-                    Console.WriteLine("{1} years passed. You are now {0} years old.", Inventory.age, yearsPassed);
+                    Console.WriteLine("{1} years passed. You are now {0} years old.", inventory.Age, yearsPassed);
                 }
                 else if (daysPassed < 730)
                 {
-                    Inventory.age += 1;
+                    inventory.Age += 1;
                     daysPassed -= 365;
-                    Console.WriteLine("One year has passed. You are now {0} years old.", Inventory.age);
+                    Console.WriteLine("One year has passed. You are now {0} years old.", inventory.Age);
                 }
 
 
-                Console.WriteLine("\nYou have {0} years left to pay off your debt.", (60 - Inventory.age));
+                Console.WriteLine("\nYou have {0} years left to pay off your debt.", (60 - inventory.Age));
                 Console.WriteLine("Press enter to continue");
                 Console.ReadLine();
-                EndCheck();
+                EndCheck(inventory);
             }
         }
-        public static void EndCheck()
+        public static void EndCheck(Inventory inventory)
         {
-            if (Inventory.pCredits <= 0)
+            if (inventory.pCredits <= 0)
             {
                 Console.Clear();
                 Console.WriteLine("You get ambushed by pirates!");
@@ -49,7 +49,7 @@ namespace SpaceConsole
                 Console.WriteLine("Press enter to continue");
                 Console.WriteLine("PEW a laser hit the window you where at!");
             }
-            else if (Inventory.age >= 60)
+            else if (inventory.Age >= 60)
             {
                 // TODO - Needs more story
                 Console.Clear();
@@ -57,7 +57,7 @@ namespace SpaceConsole
                 Console.WriteLine("You send your credits to the debt collection agency.");
                 Console.WriteLine("Press ENTER to see your fate");
                 Console.ReadLine();
-                if (Inventory.pCredits >= 1000000)
+                if (inventory.pCredits >= 1000000)
                 {
                     Console.WriteLine("A shadowy figure approaches.");
                     Console.WriteLine("Wow thats a lot of credits you made there buddy.");
@@ -69,7 +69,7 @@ namespace SpaceConsole
                     Console.WriteLine("Press ENTER to continue");
                     Console.ReadLine();
                 }
-                else if (Inventory.pCredits < 1000000)
+                else if (inventory.pCredits < 1000000)
                 {
                     Console.WriteLine("", Console.ForegroundColor = ConsoleColor.Green);
                     string shadow = ("\nA shadow figure approaches.\n\n");
@@ -108,7 +108,7 @@ namespace SpaceConsole
                     Console.ReadLine();
                 }
                 Console.WriteLine("Your dead!", Console.ForegroundColor = ConsoleColor.Red);
-                End.GameOver();
+                End.GameOver(inventory);
             }
 
         }

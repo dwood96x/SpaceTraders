@@ -26,10 +26,22 @@ namespace SpaceConsole
             b = currentPlant.yCoord - destination.xCoord;
             return Math.Sqrt(Math.Pow(a, 2.0) + Math.Pow(b, 2.0));
         }
+        public object GetPlanetName()
+        {
+            return planetName;
+        }
+        /*
+        public static DisplayAllOptions()
+        {
+            foreach (var item in collection)
+            {
+
+            }
+        }
+        */
 
 
-
-    //This is the formula and coords for the 8 planets.
-    //Need to pass to program and intergrate to current code.
+        //This is the formula and coords for the 8 planets.
+        //Need to pass to program and intergrate to current code.
     }
 }
