@@ -38,9 +38,9 @@ namespace SpaceConsole
             Console.WriteLine("Welcome to Space Traders 9000. \n");
 
             // Next lines set initial game conditions
-            Ship playerShip = new Ship("Krillan", 3, 4, 5000, 10);
+            Ship playerShip = new Ship("Krillan", 3, 4, 5000, 10, 10);
             Inventory pInventory = new Inventory("", 2000, 20, 0, "Earth", 2000);
-            Inventory.SetMaxCargo(playerShip);
+
 
             Intro.StartPoint(pInventory);
             MainMenu(playerShip, pInventory);
@@ -53,7 +53,7 @@ namespace SpaceConsole
         }
 
 
-        public static void MainMenu(Ship shipname, Inventory inventory)
+        public static void MainMenu(Ship Ship, Inventory inventory)
         {
             do
             {
@@ -65,15 +65,15 @@ namespace SpaceConsole
                 {
                     if (inventory.currentPlanet == "Earth")
                     {
-                        PlanetTP.EarthTP(inventory);
+                        PlanetTP.EarthTP(inventory, Ship);
                     }
                     else if (inventory.currentPlanet == "My Great Planet")
                     {
-                        PlanetTP.MyGPTP(inventory);
+                        PlanetTP.MyGPTP(inventory, Ship);
                     }
                     else if (inventory.currentPlanet == "Alpha Centauri")
                     {
-                        PlanetTP.ACTP(inventory);
+                        PlanetTP.ACTP(inventory, Ship);
                     }
 
                 }
@@ -120,7 +120,7 @@ namespace SpaceConsole
                 */
                 else if (input.ToLower() == "inventory")
                 {
-                    Inventory.CheckInventory(shipname, inventory);
+                    Inventory.CheckInventory(Ship, inventory);
                 }
                 else if (input.ToLower() == "exit")
                 {

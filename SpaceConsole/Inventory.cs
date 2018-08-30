@@ -13,9 +13,8 @@ namespace SpaceConsole
         public int Age;
         public double totalDistance;
         public string currentPlanet;
-        public static List<string> CargoSpace = new List<string>();
-        public static double maxCargoSize;
         public int totalCredits;
+        public static List<string> CargoSpace = new List<string>();
         public Inventory(string username, int pcredits, int age, double totaldistance, string Planet, int totalcredits)
         {
             userName = username;
@@ -25,17 +24,13 @@ namespace SpaceConsole
             currentPlanet = Planet;
             totalCredits = totalcredits;
         }
-        public static void SetMaxCargo(Ship shipname)
+        public static void AddCargo(string boughtItem, Ship Ship)
         {
-            maxCargoSize = shipname.CurShipSize;
-        }
-        public static void AddCargo(string boughtItem)
-        {
-            if (CargoSpace.Count == maxCargoSize)
+            if (CargoSpace.Count == Ship.CurShipSize)
             {
                 Console.WriteLine("Your cargospace is full. Sell something or upgrade your ship to get more.");
             }
-            else if (CargoSpace.Count < maxCargoSize)
+            else if (CargoSpace.Count < Ship.CurShipSize)
             {
                 Console.WriteLine("Adding {0} to your cargo.", boughtItem);
                 CargoSpace.Add(boughtItem);
@@ -47,13 +42,13 @@ namespace SpaceConsole
             Console.WriteLine("{0} removed from cargo.", removeItem);
         }
 
-        public static void CheckInventory(Ship shipname, Inventory inventory)
+        public static void CheckInventory(Ship Ship, Inventory inventory)
         {
             Console.WriteLine("You are {0} years old.", inventory.Age);
             Console.WriteLine("You have {0} credits.", inventory.pCredits);
             Console.WriteLine("You are at {0}", inventory.currentPlanet);
             Console.WriteLine("--------------------------------------");
-            Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", shipname.ShipName, maxCargoSize );
+            Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", Ship.ShipName, Ship.CurShipSize );
             Console.WriteLine("--------------------------------------");
             foreach (var a in CargoSpace)
                 Console.WriteLine(a);

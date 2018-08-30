@@ -12,15 +12,41 @@ namespace SpaceConsole
         public double MaxSpeed;
         public double CurShipSize;
         public double ShipCost;
+        public double CurrentFuel;
         public double MaxFuel;
 
-        public Ship(string shipName, double maxSpeed, double curShipSize, double shipCost, double maxFuel)
+        public Ship(string shipName, double maxSpeed, double curShipSize, double shipCost, double maxFuel, double currentfuel)
         {
             ShipName = shipName;
             MaxSpeed = maxSpeed;
             CurShipSize = curShipSize;
             ShipCost = shipCost;
             MaxFuel = maxFuel;
+            CurrentFuel = currentfuel;
+        }
+        //Ship upgrade methods below
+        public void CargoUpgrade()
+        {
+            CurShipSize += 1;
+        }
+        public void SpeedUpgrade()
+        {
+            MaxSpeed += 1;
+        }
+        public void FuelUpgrade()
+        {
+            MaxFuel += 1;
+        }
+        public void RefillFuel(double fuelrequested)
+        {
+            if ((fuelrequested + CurrentFuel) > MaxFuel)
+            {
+                Console.WriteLine("Thats more fuel than your tank can hold. Try again.");
+            }
+            else
+            {
+                CurrentFuel += fuelrequested;
+            }
         }
         /*
         public string GetShipName()

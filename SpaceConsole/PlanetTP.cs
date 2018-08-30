@@ -9,7 +9,7 @@ namespace SpaceConsole
     class PlanetTP
     {
         public static bool exitA = true;
-        public static void EarthTP(Inventory inventory)
+        public static void EarthTP(Inventory inventory, Ship Ship)
         {
             string earth = "\nWelcome to the Trading Post of Earth.\n";
             for (int i = 0; i < earth.Length; i++)
@@ -43,7 +43,7 @@ namespace SpaceConsole
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems.BItems(inventory);
+                    BuyItems.BItems(inventory, Ship);
                 }
                 else if (userInput.ToLower() == "sell")
                 {
@@ -66,7 +66,7 @@ namespace SpaceConsole
 
             } while (exitA == true);
         }
-        public static void MyGPTP(Inventory inventory)
+        public static void MyGPTP(Inventory inventory, Ship Ship)
         {
             string MyGPTP = "\nWelcome to the Trading Post of My Great Planet.\n";
             for (int i = 0; i < MyGPTP.Length; i++)
@@ -100,7 +100,7 @@ namespace SpaceConsole
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems.BItems(inventory);
+                    BuyItems.BItems(inventory, Ship);
                 }
                 else if (userInput.ToLower() == "sell")
                 {
@@ -117,7 +117,7 @@ namespace SpaceConsole
 
             } while (exitA == true);
         }
-        public static void ACTP(Inventory inventory)
+        public static void ACTP(Inventory inventory,Ship Ship)
         {
             string ACTP = "\nWelcome to the Trading Post of Alpha Centauri";
             for (int i = 0; i < ACTP.Length; i++)
@@ -145,7 +145,7 @@ namespace SpaceConsole
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems.BItems(inventory);
+                    BuyItems.BItems(inventory, Ship);
                 }
                 else if (userInput.ToLower() == "sell")
                 {
