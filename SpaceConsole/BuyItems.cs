@@ -7,20 +7,51 @@ using System.Threading.Tasks;
 namespace SpaceConsole
 {
     class BuyItems
-    {
-        public static void BItems(Inventory inventory,Ship Ship)
+    {        
+        public static void BItems(Inventory inventory,Ship Ship, string biome)
         {
+            double earthmod = 1;
+            double marsmod = 1;
+            double miningmod = 1;
+            double tWater;
+            if (biome == "Earthish")
+            {
+                earthmod = 0.65;
+                marsmod = 1.3;
+                miningmod = 1.4;
+            }
+            else if(biome == "Marish")
+            {
+                earthmod = 1.4;
+                marsmod = 0.65;
+                miningmod = 1.2;
+            }
+            else if(biome == "Mining")
+            {
+                earthmod = 1.4;
+                marsmod = 1.1;
+                miningmod = 0.65;
+            }
+            ItemBuy Water = new ItemBuy("Water", 1000);
+            ItemBuy Food = new ItemBuy("Food", 1200);
+            ItemBuy commonMineral = new ItemBuy("Common Mineral", 5000);
+            ItemBuy medicalSupplies = new ItemBuy("Medical Supplies", 10000);
+            ItemBuy technology = new ItemBuy("Technology", 15000);
+            ItemBuy weapon = new ItemBuy("Weapon", 20000);
+            ItemBuy rareMaterial = new ItemBuy("Rare Material", 75000);
+            ItemBuy darkMatter = new ItemBuy("Dark Matter", 1000000);
+
             Console.Clear();
             Console.WriteLine("Which item would you like to buy {0}?\n", inventory.userName);
             Console.WriteLine("==============================================");
-            Console.WriteLine("\n\t Water -                     1000c" +
-                              "\n\t Food -                      1200c" +                              
-                              "\n\t Common Mineral -            5000c" +
-                              "\n\t Medical Supplies -         10000c" +
-                              "\n\t Technology -               15000c" +
-                              "\n\t Weapon -                   20000c" +
-                              "\n\t Rare Material -            75000c" +
-                              "\n\t Dark Matter -             100000c" +
+            Console.WriteLine("\n\t Water -                     {0}c",(tWater = Water.ItemPrice * earthmod) +
+                              "\n\t Food -                      {0}c",(Food.ItemPrice * earthmod) +                              
+                              "\n\t Common Mineral -            {0}c",(commonMineral.ItemPrice * miningmod) +
+                              "\n\t Medical Supplies -          {0}c",(medicalSupplies.ItemPrice * earthmod) +
+                              "\n\t Technology -                {0}c",(technology.ItemPrice * marsmod) +
+                              "\n\t Weapon -                    {0}c",(weapon.ItemPrice * earthmod) +
+                              "\n\t Rare Material -             {0}c",(rareMaterial.ItemPrice * miningmod) +
+                              "\n\t Dark Matter -               {0}c",(darkMatter.ItemPrice * miningmod) +
                               "\n" +
                               "\n\t Leave\n");
             Console.WriteLine("==============================================");
@@ -28,28 +59,27 @@ namespace SpaceConsole
 
             if (input.ToLower() == "water")
             {
-                int water;
-                Console.Write("How much Water would you like to buy?\n");
+                double num;
+                Console.Write("How much {0} would you like to buy?\n", input);
                 string wat = Console.ReadLine();
-                water = int.Parse(wat);
-                int total = water * 1000;
-                if (total > inventory.pCredits || Ship.CurShipSize < water)
+                num = double.Parse(wat);
+                double total = num * tWater;
+                if (total > inventory.pCredits || Ship.CurShipSize < num)
                 {
                     Console.WriteLine("You do not have enough credits or you do not have enough space to buy this");
                     return;
                 }
                 else
                 {
-                    int remain = inventory.pCredits - total;
-                    Console.WriteLine("\nYou bought {0} Water for {1}.", wat, total);
+                    double remain = inventory.pCredits - total;
+                    Console.WriteLine("\nYou bought {0} {1} for {2}.", wat, input, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    inventory.pCredits = remain;
-                    for (int i = 0; i < water; i++)
+                    //inventory.pCredits = remain;
+                    for (int i = 0; i < num; i++)
                     {
                         Inventory.AddCargo("Water", Ship);
                     }
-                    Console.ReadLine();
-                    //leave method
+                    Console.ReadLine();                    
                 }
             }
             else if (input.ToLower() == "food")
@@ -233,9 +263,8 @@ namespace SpaceConsole
                         Inventory.AddCargo("Dark Matter", Ship);
                     }
                     Console.ReadLine();
-
                 }
-            }        
+            }
             else if (input.ToLower() == "leave")
             {
 
