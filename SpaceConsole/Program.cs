@@ -11,15 +11,15 @@ namespace SpaceConsole
         public static bool exitChoice = false;
         static void Main(string[] args)
         {
-            Planet earth = new Planet(0, 0, "Earth");
-            Planet ac = new Planet(0, -4.367, "Alpha Centurion");
-            Planet m63 = new Planet(-4.6, 5, "M63");
-            Planet p100 = new Planet(-10, -8, "P100");
-            Planet grenonus = new Planet(-21, -3, "Grenonus");
-            Planet derioa = new Planet(-13, 12, "Derioa");
-            Planet esides = new Planet(6, 32, "Esides");
-            Planet geitov = new Planet(-28, 38, "Geirtov");
-            // Puts planets into a list
+            Planet earth = new Planet(0, 0, "Earth", "Earthish");
+            Planet ac = new Planet(0, -4.367, "Alpha Centurion", "Marish");
+            Planet m63 = new Planet(-4.6, 5, "M63", "Earthish");
+            Planet p100 = new Planet(-10, -8, "P100", "Marish");
+            Planet grenonus = new Planet(-21, -3, "Grenonus", "Earthish");
+            Planet derioa = new Planet(-13, 12, "Derioa", "Marish");
+            Planet esides = new Planet(6, 32, "Esides", "Marish");
+            Planet geitov = new Planet(-28, 38, "Geirtov", "Mining");
+            Planet x99 = new Planet(7, 7, "X99", "Marish");
             List<Planet> PlanetList = new List<Planet>();
             PlanetList.AddMany(earth, ac, m63, p100, grenonus, derioa, esides, geitov);
       
@@ -31,17 +31,12 @@ namespace SpaceConsole
 
             MainMenu(playerShip, pInventory, PlanetList);
 
-            /* Test functions :
-            Warp.WarpTo(2, inventory.currentPlanet);
-            Inventory.checkInventory();
-            PlanetTP.EarthTP();
-            */
         }
 
 
         public static void MainMenu(Ship Ship, Inventory inventory, List<Planet> planetlist)
         {
-            Planet currentplanet = new Planet(0, 0, "Earth");
+            Planet currentplanet = new Planet(0, 0, "Earth", "Earthish");
             do
             {
                 Console.Clear();
@@ -69,10 +64,11 @@ namespace SpaceConsole
                     Console.WriteLine("Where would you like to warp to?");
                     foreach (var planetf in planetlist)
                     {
-                        if (Planet.Distance(currentplanet, planetf) < Ship.CurrentFuel)
+                        if (Planet.Distance(currentplanet, planetf) < Ship.CurrentFuel && Planet.Distance(currentplanet, planetf) != 0)
                         {
                             Console.WriteLine("{0} : {1}" ,planetf.planetName, Planet.Distance(currentplanet,planetf));
                         }
+
                     }
                     Console.ReadLine();
                 }

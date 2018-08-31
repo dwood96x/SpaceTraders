@@ -62,6 +62,7 @@ namespace SpaceConsole
             Console.WriteLine("It will take {0:F2} days to get to the destination", travTime);
             inventory.totalDistance += distance;
         }
+        /* Old non-dynamic warp code
         public static void WarpTo(int toPlanet, string fromPlanet, Ship shipname, Inventory inventory)
         {
 
@@ -102,15 +103,15 @@ namespace SpaceConsole
             Time.TimePassed(inventory);
             travTime = 0;
         }
-        /*
-        public static void WarpToFixed(string toPlanet, string fromPlanet, Ship shipname)
+        */
+        public static void WarpTo(Planet currentplanet, Planet toPlanet, Ship shipname, Inventory player)
         {
-            TravelTime(CalcDistance(double xcord, double ycord), shipname);
+            TravelTime(Planet.Distance(currentplanet,toPlanet),shipname, player);
             Console.WriteLine("Press ENTER to continue.");
             Console.ReadLine();
-            Time.TimePassed();
+            Time.TimePassed(player);
             travTime = 0;
         }
-        */
+        
     }
 }
