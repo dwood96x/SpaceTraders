@@ -9,7 +9,7 @@ namespace SpaceConsole
     class Time
     {
         public static double daysPassed;
-        public static void TimePassed(Inventory inventory)
+        public static void TimePassed(Inventory inventory, Ship playership)
         {
             daysPassed += Warp.travTime;
             if (daysPassed >= 365)
@@ -32,12 +32,19 @@ namespace SpaceConsole
                 Console.WriteLine("\nYou have {0} years left to pay off your debt.", (60 - inventory.Age));
                 Console.WriteLine("Press enter to continue");
                 Console.ReadLine();
-                EndCheck(inventory);
+                EndCheck(inventory, playership);
             }
         }
-        public static void EndCheck(Inventory inventory)
+        public static void EndCheck(Inventory inventory, Ship playership)
         {
-            if (inventory.pCredits <= 0)
+            if (playership.CurrentFuel <= 0)
+            {
+                Console.Clear();
+                Console.WriteLine("You've ran out of fuel!");
+                Console.WriteLine("You drift in space until you and your crew fall to hunger!");
+
+            }
+            else if (inventory.pCredits <= 0)
             {
                 Console.Clear();
                 Console.WriteLine("You get ambushed by pirates!");
@@ -47,6 +54,7 @@ namespace SpaceConsole
                 Console.WriteLine("Months go by until you hear the sound of laser fire rocking the ship!");
                 Console.WriteLine("You look out a window and see police cruisers!");
                 Console.WriteLine("Press enter to continue");
+                Console.ReadLine();
                 Console.WriteLine("PEW a laser hit the window you where at!");
             }
             else if (inventory.Age >= 60)
@@ -72,20 +80,20 @@ namespace SpaceConsole
                 else if (inventory.pCredits < 1000000)
                 {
                     Console.WriteLine("", Console.ForegroundColor = ConsoleColor.Green);
-                    string shadow = ("\nA shadow figure approaches.\n\n");
+                    string shadow = ("\nA shadowy figure approaches.\n\n");
                         
                     for (int i = 0; i < shadow.Length; i++)
                     {
                         Console.Write(shadow[i]);
                         System.Threading.
-                        Thread.Sleep(60);
+                        Thread.Sleep(50);
                     }
                     string message = ("\nYou tried to pay us with THAT measily amount of credits?!?\n\n");
                     for (int i = 0; i < message.Length; i++)
                     {
                         Console.Write(message[i]);
                         System.Threading.
-                        Thread.Sleep(60);
+                        Thread.Sleep(45);
                     }
                     string debt = ("Don't worry, you still get to pay off your debt......");
                     for (int i = 0; i < debt.Length; i++)

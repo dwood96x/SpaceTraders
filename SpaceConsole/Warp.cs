@@ -104,12 +104,12 @@ namespace SpaceConsole
             travTime = 0;
         }
         */
-        public static void WarpTo(Planet currentplanet, Planet toPlanet, Ship shipname, Inventory player)
+        public static void WarpTo(Planet currentplanet, Planet toPlanet, Ship playership, Inventory player)
         {
-            TravelTime(Planet.Distance(currentplanet,toPlanet),shipname, player);
+            TravelTime(Planet.Distance(currentplanet,toPlanet),playership, player);
             Console.WriteLine("Press ENTER to continue.");
             Console.ReadLine();
-            Time.TimePassed(player);
+            Time.TimePassed(player, playership);
             travTime = 0;
         }
         
