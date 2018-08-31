@@ -28,11 +28,8 @@ namespace SpaceConsole
             Ship playerShip = new Ship("Krillan", 3, 4, 5000, 10, 10);
             Inventory pInventory = new Inventory("", 2000, 20, 0, "Earth", 2000);
             Intro.StartPoint(pInventory);
-
             MainMenu(playerShip, pInventory, PlanetList);
-
         }
-
 
         public static void MainMenu(Ship Ship, Inventory inventory, List<Planet> planetlist)
         {
@@ -61,9 +58,9 @@ namespace SpaceConsole
                         {
                             Console.WriteLine("{0} : {1}" ,planetf.planetName, Planet.Distance(currentplanet,planetf));
                         }
-
                     }
                     Console.ReadLine();
+                    Regex.Matches()
                 }
                 else if (input.ToLower() == "inventory")
                 {
