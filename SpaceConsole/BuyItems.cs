@@ -46,7 +46,7 @@ namespace SpaceConsole
                     inventory.pCredits = remain;
                     for (int i = 0; i < water; i++)
                     {
-                        Inventory.AddCargo("Water",Ship);
+                        Inventory.AddCargo("Water", Ship);
                     }
                     Console.ReadLine();
                     //leave method
@@ -72,7 +72,7 @@ namespace SpaceConsole
                     inventory.pCredits = remain;
                     for (int i = 0; i < food; i++)
                     {
-                        Inventory.AddCargo("Food",Ship);
+                        Inventory.AddCargo("Food", Ship);
                     }
                     Console.ReadLine();
                     //leave method
@@ -98,7 +98,7 @@ namespace SpaceConsole
                     inventory.pCredits = remain;
                     for (int i = 0; i < commonMineral; i++)
                     {
-                        Inventory.AddCargo("Common Mineral",Ship);
+                        Inventory.AddCargo("Common Mineral", Ship);
                     }
                     Console.ReadLine();
                     //leave method
@@ -124,7 +124,7 @@ namespace SpaceConsole
                     inventory.pCredits = remain;
                     for (int i = 0; i < medicalSupply; i++)
                     {
-                        Inventory.AddCargo("Food",Ship);
+                        Inventory.AddCargo("Food", Ship);
                     }
                     Console.ReadLine();
                     //leave method
@@ -150,7 +150,7 @@ namespace SpaceConsole
                     inventory.pCredits = remain;
                     for (int i = 0; i < technology; i++)
                     {
-                        Inventory.AddCargo("Technology",Ship);
+                        Inventory.AddCargo("Technology", Ship);
                     }
                     Console.ReadLine();
                     //leave method
@@ -177,7 +177,7 @@ namespace SpaceConsole
                     inventory.pCredits = remain;
                     for (int i = 0; i < weapon; i++)
                     {
-                        Inventory.AddCargo("Weapon",Ship);
+                        Inventory.AddCargo("Weapon", Ship);
                     }
                     Console.ReadLine();
                     //leave method
@@ -204,7 +204,7 @@ namespace SpaceConsole
                     inventory.pCredits = remain;
                     for (int i = 0; i < rareMaterial; i++)
                     {
-                        Inventory.AddCargo("Rare Material",Ship);
+                        Inventory.AddCargo("Rare Material", Ship);
                     }
                     Console.ReadLine();
                     //leave method
@@ -230,11 +230,15 @@ namespace SpaceConsole
                     inventory.pCredits = remain;
                     for (int i = 0; i < darkMatter; i++)
                     {
-                        Inventory.AddCargo("Dark Matter",Ship);
+                        Inventory.AddCargo("Dark Matter", Ship);
                     }
                     Console.ReadLine();
-                    //leave method
+
                 }
+            }        
+            else if (input.ToLower() == "leave")
+            {
+
             }
             else
             {
