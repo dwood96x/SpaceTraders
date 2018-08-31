@@ -8,42 +8,28 @@ namespace SpaceConsole
 {
     class Program
     {
-        public string ItemName;
-        public int ItemPrice;
         public static bool exitChoice = false;
         static void Main(string[] args)
         {
             Planet earth = new Planet(0, 0, "Earth");
             Planet ac = new Planet(0, -4.367, "Alpha Centurion");
             Planet m63 = new Planet(-4.6, 5, "M63");
-            Planet p100 = new Planet(-30, -30, "P100");
-            Planet grenonus = new Planet(-36, -23, "Grenonus");
+            Planet p100 = new Planet(-10, -8, "P100");
+            Planet grenonus = new Planet(-21, -3, "Grenonus");
             Planet derioa = new Planet(-13, 12, "Derioa");
-            Planet esides = new Planet(6, 35, "Esides");
+            Planet esides = new Planet(6, 32, "Esides");
             Planet geitov = new Planet(-28, 38, "Geirtov");
-
-
             // Puts planets into a list
             List<Planet> PlanetList = new List<Planet>();
             PlanetList.AddMany(earth, ac, m63, p100, grenonus, derioa, esides, geitov);
-            /*Method to list all travelable planets, broken
-            foreach (var planet in PlanetList)
-            {
-                if (Planet.Distance(inventory.currentPlanet,ac) < 10.0)
-                {
-                    Console.WriteLine(planet.planetName);
-                }
-            }
-            */
+      
             Console.WriteLine("Welcome to Space Traders 9000. \n");
-
             // Next lines set initial game conditions
             Ship playerShip = new Ship("Krillan", 3, 4, 5000, 10, 10);
             Inventory pInventory = new Inventory("", 2000, 20, 0, "Earth", 2000);
-
-
             Intro.StartPoint(pInventory);
-            MainMenu(playerShip, pInventory);
+
+            MainMenu(playerShip, pInventory, PlanetList);
 
             /* Test functions :
             Warp.WarpTo(2, inventory.currentPlanet);
@@ -53,8 +39,9 @@ namespace SpaceConsole
         }
 
 
-        public static void MainMenu(Ship Ship, Inventory inventory)
+        public static void MainMenu(Ship Ship, Inventory inventory, List<Planet> planetlist)
         {
+            Planet currentplanet = new Planet(0, 0, "Earth");
             do
             {
                 Console.Clear();
@@ -77,47 +64,18 @@ namespace SpaceConsole
                     }
 
                 }
-                /*
                 else if (input.ToLower() == "travel")
                 {
                     Console.WriteLine("Where would you like to warp to?");
-                    for (int i = 0; i < length; i++)
+                    foreach (var planetf in planetlist)
                     {
-                        Console.WriteLine({Planet})
+                        if (Planet.Distance(currentplanet, planetf) < Ship.CurrentFuel)
+                        {
+                            Console.WriteLine("{0} : {1}" ,planetf.planetName, Planet.Distance(currentplanet,planetf));
+                        }
                     }
+                    Console.ReadLine();
                 }
-                */
-                /*
-                else if (input.ToLower() == "travel")
-                {
-                    Console.WriteLine("\nWhere would you like to warp to? \n\tEarth, My Great Planet, or Alpha Centauri?");
-                    string travelInput = Console.ReadLine();
-                    int travelChoice = 0;
-                    if (travelInput.ToLower() == "earth" && inventory.currentPlanet != "Earth")
-                    {
-                        travelChoice = 1;
-                    }
-                    else if (travelInput.ToLower() == "my great planet" && inventory.currentPlanet != "My Great Planet")
-                    {
-                        travelChoice = 2;
-                    }
-                    else if (travelInput.ToLower() == "alpha centauri" && inventory.currentPlanet != "Alpha Centauri")
-                    {
-                        travelChoice = 3;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid selection, your either already on that planet or you spelled it incorrectly.");
-                        Console.WriteLine("Press enter to continue");
-                        Console.ReadLine();
-                    }
-                    if (travelChoice != 0)
-                    {
-                        Warp.WarpTo(travelChoice, inventory.currentPlanet, shipname);
-                    }
-                    
-                }
-                */
                 else if (input.ToLower() == "inventory")
                 {
                     Inventory.CheckInventory(Ship, inventory);

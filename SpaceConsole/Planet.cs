@@ -20,28 +20,17 @@ namespace SpaceConsole
             yCoord = y;
             planetName = pn;
         }
-        public static double Distance(Planet currentPlant, Planet destination)
+        public static double Distance(Planet currentPlanet, Planet destination)
         {
-            a = currentPlant.xCoord - destination.xCoord;
-            b = currentPlant.yCoord - destination.xCoord;
+            a = currentPlanet.xCoord - destination.xCoord;
+            b = currentPlanet.yCoord - destination.yCoord;
             return Math.Sqrt(Math.Pow(a, 2.0) + Math.Pow(b, 2.0));
         }
         public object GetPlanetName()
         {
             return planetName;
         }
-        /*
-        public static DisplayAllOptions()
-        {
-            foreach (var item in collection)
-            {
-
-            }
-        }
-        */
-
 
         //This is the formula and coords for the 8 planets.
-        //Need to pass to program and intergrate to current code.
     }
 }
