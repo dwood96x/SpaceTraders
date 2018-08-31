@@ -49,7 +49,7 @@ namespace SpaceConsole
                               "\n\t Common Mineral -            {0}c",(commonMineral.ItemPrice * miningmod) +
                               "\n\t Medical Supplies -          {0}c",(medicalSupplies.ItemPrice * earthmod) +
                               "\n\t Technology -                {0}c",(technology.ItemPrice * marsmod) +
-                              "\n\t Weapon -                    {0}c",(weapon.ItemPrice * earthmod) +
+                              "\n\t Weapon -                    {0}c",(weapon.ItemPrice * marsmod) +
                               "\n\t Rare Material -             {0}c",(rareMaterial.ItemPrice * miningmod) +
                               "\n\t Dark Matter -               {0}c",(darkMatter.ItemPrice * miningmod) +
                               "\n" +
