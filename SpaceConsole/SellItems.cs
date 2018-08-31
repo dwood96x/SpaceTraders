@@ -8,7 +8,7 @@ namespace SpaceConsole
 {
     class SellItems
     {
-        public static void SItems(Inventory inventory)
+        public static void SItems(Inventory inventory, string biome)
         {
             double earthmod = 1;
             double marsmod = 1;

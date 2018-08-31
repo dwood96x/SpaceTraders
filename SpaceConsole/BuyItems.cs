@@ -82,6 +82,7 @@ namespace SpaceConsole
                     Console.ReadLine();                    
                 }
             }
+            /*
             else if (input.ToLower() == "food")
             {
                 int food;
@@ -265,6 +266,7 @@ namespace SpaceConsole
                     Console.ReadLine();
                 }
             }
+            */
             else if (input.ToLower() == "leave")
             {
 

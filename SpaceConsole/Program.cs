@@ -47,16 +47,9 @@ namespace SpaceConsole
                 {
                     if (inventory.currentPlanet == "Earth")
                     {
-                        PlanetTP.EarthTP(inventory, Ship);
+                        PlanetTP.EarthTP(inventory, Ship, currentplanet);
                     }
-                    else if (inventory.currentPlanet == "My Great Planet")
-                    {
-                        PlanetTP.MyGPTP(inventory, Ship);
-                    }
-                    else if (inventory.currentPlanet == "Alpha Centauri")
-                    {
-                        PlanetTP.ACTP(inventory, Ship);
-                    }
+                    
 
                 }
                 else if (input.ToLower() == "travel")
