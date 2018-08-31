@@ -46,8 +46,7 @@
     <Compile Include="End.cs" />
     <Compile Include="Intro.cs" />
     <Compile Include="Inventory.cs" />
-    <Compile Include="ItemBuy.cs" />
-    <Compile Include="ItemSell.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="Planet.cs" />
     <Compile Include="PlanetTP.cs" />
     <Compile Include="Program.cs" />

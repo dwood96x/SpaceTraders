@@ -15,6 +15,7 @@ namespace SpaceConsole
         public string currentPlanet;
         public int totalCredits;
         public static List<string> CargoSpace = new List<string>();
+        public static int[] cargoQuantity = new int[8];
         public Inventory(string username, int pcredits, int age, double totaldistance, string Planet, int totalcredits)
         {
             userName = username;
@@ -24,7 +25,41 @@ namespace SpaceConsole
             currentPlanet = Planet;
             totalCredits = totalcredits;
         }
-        public static void AddCargo(string boughtItem, Ship Ship)
+        public int[] InventoryQuantities()
+        {
+            for (var i = 0; i < CargoSpace.Count; i++)
+            {
+                switch (CargoSpace[i])
+                {
+                    case "Water":
+                        cargoQuantity[0] += 1;
+                        break;
+                    case "Food":
+                        cargoQuantity[1] += 1;
+                        break;
+                    case "Common Material":
+                        cargoQuantity[2] += 1;
+                        break;
+                    case "Medical Supplies":
+                        cargoQuantity[3] += 1;
+                        break;
+                    case "Technology":
+                        cargoQuantity[4] += 1;
+                        break;
+                    case "Weapon":
+                        cargoQuantity[5] += 1;
+                        break;
+                    case "Rare Material":
+                        cargoQuantity[6] += 1;
+                        break;
+                    case "Dark Matter":
+                        cargoQuantity[7] += 1;
+                        break;
+                }
+            }
+            return cargoQuantity;
+        }
+            public static void AddCargo(string boughtItem, Ship Ship)
         {
             if (CargoSpace.Count == Ship.CurShipSize)
             {
@@ -50,8 +85,36 @@ namespace SpaceConsole
             Console.WriteLine("--------------------------------------");
             Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", Ship.ShipName, Ship.CurShipSize );
             Console.WriteLine("--------------------------------------");
-            foreach (var a in CargoSpace)
-                Console.WriteLine(a);
+            for (var i = 0; i < 8; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        Console.WriteLine($"Quantity of Water: {cargoQuantity[i]}");
+                        break;
+                    case 1:
+                        Console.WriteLine($"Quantity of Food: {cargoQuantity[i]}");
+                        break;
+                    case 2:
+                        Console.WriteLine($"Quantity of Common Material: {cargoQuantity[i]}");
+                        break;
+                    case 3:
+                        Console.WriteLine($"Quantity of Medical Supplies: {cargoQuantity[i]}");
+                        break;
+                    case 4:
+                        Console.WriteLine($"Quantity of Technology: {cargoQuantity[i]}");
+                        break;
+                    case 5:
+                        Console.WriteLine($"Quantity of Weapon: {cargoQuantity[i]}");
+                        break;
+                    case 6:
+                        Console.WriteLine($"Quantity of Rare Material: {cargoQuantity[i]}");
+                        break;
+                    case 7:
+                        Console.WriteLine($"Quantity of Dark Matter: {cargoQuantity[i]}");
+                        break;
+                }
+            }
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
         }

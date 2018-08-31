@@ -16,14 +16,14 @@ namespace SpaceConsole
             {
                 Console.Write(earth[i]);
                 System.Threading.
-                Thread.Sleep(60);
+                Thread.Sleep(35);
             }
             string avail = "\nHere is the list of availble items.\n";
             for (int i = 0; i < avail.Length; i++)
             {
                 Console.Write(avail[i]);
                 System.Threading.
-                Thread.Sleep(60);
+                Thread.Sleep(35);
             }
             Console.WriteLine("==================================\n");
             Console.WriteLine("\tWater" +
@@ -47,7 +47,7 @@ namespace SpaceConsole
                 }
                 else if (userInput.ToLower() == "sell")
                 {
-                    SellItems.SItems(inventory,currentPlanet.biome);
+                    SellItems.SItems(inventory, Ship, currentPlanet.biome);
                 }
                 else if (userInput.ToLower() == "leave")
                 {
