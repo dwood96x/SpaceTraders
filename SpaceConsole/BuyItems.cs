@@ -67,7 +67,7 @@ namespace SpaceConsole
             if (input.ToLower() == "water")
             {
                 double num;
-                Console.Write("How much {0} would you like to buy?\n", input);
+                Console.Write("How much Water would you like to buy?\n");
                 string wat = Console.ReadLine();
                 num = double.Parse(wat);
                 double total = num * tw;
@@ -81,7 +81,7 @@ namespace SpaceConsole
                     double remain = inventory.pCredits - total;
                     Console.WriteLine("\nYou bought {0} {1} for {2}.", num, input, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    //inventory.pCredits = remain;
+                    inventory.pCredits = (int)remain;
                     for (int i = 0; i < num; i++)
                     {
                         Inventory.AddCargo("Water", Ship);
@@ -91,12 +91,12 @@ namespace SpaceConsole
             }            
             else if (input.ToLower() == "food")
             {
-                double fnum;
+                double num;
                 Console.Write("How much Food would you like to buy?\n");
                 string foo = Console.ReadLine();
-                fnum = int.Parse(foo);
-                double total = fnum * tf;
-                if (total > inventory.pCredits || Ship.CurShipSize < fnum)
+                num = int.Parse(foo);
+                double total = num * tf;
+                if (total > inventory.pCredits || Ship.CurShipSize < num)
                 {
                     Console.WriteLine("You do not have enough credits or you do not have enough space to buy this");
                     return;
@@ -104,24 +104,24 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits - total;
-                    Console.WriteLine("\nYou bought {0} Water for {1}.", foo, total);
-                    Console.WriteLine("\nYou have {0} credits left.", remain);                    
-                    for (int i = 0; i < fnum; i++)
+                    Console.WriteLine("\nYou bought {0} Food for {1}.", foo, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    inventory.pCredits = (int)remain;
+                    for (int i = 0; i < num; i++)
                     {
                         Inventory.AddCargo("Food", Ship);
                     }
                     Console.ReadLine();
-                    //leave method
                 }
             }
             else if (input.ToLower() == "common mineral")
             {
-                double cmnum;
-                Console.Write("How much {0} would you like to buy?\n", input);
+                double num;
+                Console.Write("How much Common mineral would you like to buy?\n");
                 string common = Console.ReadLine();
-                cmnum = double.Parse(common);
-                double total = cmnum * tc;
-                if (total > inventory.pCredits || Ship.CurShipSize < cmnum)
+                num = double.Parse(common);
+                double total = num * tc;
+                if (total > inventory.pCredits || Ship.CurShipSize < num)
                 {
                     Console.WriteLine("You do not have enough credits or you do not have enough space to buy this");
                     return;
@@ -129,25 +129,24 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits - total;
-                    Console.WriteLine("\nYou bought {0} Common Mineral(s) for {1}.", cmnum, total);
+                    Console.WriteLine("\nYou bought {0} Common Mineral(s) for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-
-                    for (int i = 0; i < cmnum; i++)
+                    inventory.pCredits = (int)remain;
+                    for (int i = 0; i < num; i++)
                     {
                         Inventory.AddCargo("Common Mineral", Ship);
                     }
                     Console.ReadLine();
-                    //leave method
                 }
             }
             else if (input.ToLower() == "medical supply")
             {
-                double msnum;
-                Console.Write("How much {0} would you like to buy?\n", input);
+                double num;
+                Console.Write("How much Medical Supply would you like to buy?\n");
                 string ms = Console.ReadLine();
-                msnum = double.Parse(ms);
-                double total = msnum * tsm;
-                if (total > inventory.pCredits || Ship.CurShipSize < msnum)
+                num = double.Parse(ms);
+                double total = num * tsm;
+                if (total > inventory.pCredits || Ship.CurShipSize < num)
                 {
                     Console.WriteLine("You do not have enough credits or you do not have enough space to buy this");
                     return;
@@ -157,23 +156,22 @@ namespace SpaceConsole
                     double remain = inventory.pCredits - total;
                     Console.WriteLine("\nYou bought {0} Medical Supply(ies) for {1}.", ms, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-
-                    for (int i = 0; i < msnum; i++)
+                    inventory.pCredits = (int)remain;
+                    for (int i = 0; i < num; i++)
                     {
                         Inventory.AddCargo("Medical Supply", Ship);
                     }
                     Console.ReadLine();
-                    //leave method
                 }
             }
             else if (input.ToLower() == "technology")
             {
-                double tnum;
-                Console.Write("How much {0} would you like to buy?\n", input);
+                double num;
+                Console.Write("How much Technology would you like to buy?\n");
                 string tech = Console.ReadLine();
-                tnum = double.Parse(tech);
-                double total = tnum * tt;
-                if (total > inventory.pCredits || Ship.CurShipSize < tnum)
+                num = double.Parse(tech);
+                double total = num * tt;
+                if (total > inventory.pCredits || Ship.CurShipSize < num)
                 {
                     Console.WriteLine("You do not have enough credits or you do not have enough space to buy this");
                     return;
@@ -183,8 +181,8 @@ namespace SpaceConsole
                     double remain = inventory.pCredits - total;
                     Console.WriteLine("\nYou bought {0} Technology(ies) for {1}.", tech, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-
-                    for (int i = 0; i < tnum; i++)
+                    inventory.pCredits = (int)remain;
+                    for (int i = 0; i < num; i++)
                     {
                         Inventory.AddCargo("Technology", Ship);
                     }
@@ -193,12 +191,12 @@ namespace SpaceConsole
             }
             else if (input.ToLower() == "weapon")
             {
-                double wnum;
-                Console.Write("How much Water would you like to buy?\n");
+                double num;
+                Console.Write("How many Weapons would you like to buy?\n");
                 string weap = Console.ReadLine();
-                wnum = int.Parse(weap);
-                double total = wnum * twe;
-                if (total > inventory.pCredits || Ship.CurShipSize < wnum)
+                num = int.Parse(weap);
+                double total = num * twe;
+                if (total > inventory.pCredits || Ship.CurShipSize < num)
                 {
                     Console.WriteLine("You do not have enough credits or you do not have enough space to buy this");
                     return;
@@ -209,8 +207,8 @@ namespace SpaceConsole
                     Console.WriteLine("\nYou bought {0} Weapons(s)" +
                         " for {1}.", weap, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-
-                    for (int i = 0; i < wnum; i++)
+                    inventory.pCredits = (int)remain;
+                    for (int i = 0; i < num; i++)
                     {
                         Inventory.AddCargo("Weapon", Ship);
                     }
@@ -219,12 +217,12 @@ namespace SpaceConsole
             }
             else if (input.ToLower() == "rare material")
             {
-                double rarenum;
-                Console.Write("How much Water would you like to buy?\n");
+                double num;
+                Console.Write("How much Rare material would you like to buy?\n");
                 string rare = Console.ReadLine();
-                rarenum = double.Parse(rare);
-                double total = rarenum * trm;
-                if (total > inventory.pCredits || Ship.CurShipSize < rarenum)
+                num = double.Parse(rare);
+                double total = num * trm;
+                if (total > inventory.pCredits || Ship.CurShipSize < num)
                 {
                     Console.WriteLine("You do not have enough credits or you do not have enough space to buy this");
                     return;
@@ -234,23 +232,22 @@ namespace SpaceConsole
                     double remain = inventory.pCredits - total;
                     Console.WriteLine("\nYou bought {0} Rare Material(s) for {1}.", rare, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-
-                    for (int i = 0; i < rarenum; i++)
+                    inventory.pCredits = (int)remain;
+                    for (int i = 0; i < num; i++)
                     {
                         Inventory.AddCargo("Rare Material", Ship);
                     }
                     Console.ReadLine();
-                    //leave method
                 }
             }
             else if (input.ToLower() == "dark matter")
             {
-                double darknum;
+                double num;
                 Console.Write("How much Dark Matter would you like to buy?\n");
                 string dark = Console.ReadLine();
-                darknum = int.Parse(dark);
-                double total = darknum * tdm;
-                if (total > inventory.pCredits || Ship.CurShipSize < darknum)
+                num = int.Parse(dark);
+                double total = num * tdm;
+                if (total > inventory.pCredits || Ship.CurShipSize < num)
                 {
                     Console.WriteLine("You do not have enough credits or you do not have enough space to buy this");
                     return;
@@ -260,8 +257,8 @@ namespace SpaceConsole
                     double remain = inventory.pCredits - total;
                     Console.WriteLine("\nYou bought {0} Dark Matter for {1}.", dark, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-
-                    for (int i = 0; i < darknum; i++)
+                    inventory.pCredits = (int)remain;
+                    for (int i = 0; i < num; i++)
                     {
                         Inventory.AddCargo("Dark Matter", Ship);
                     }

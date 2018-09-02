@@ -25,7 +25,8 @@ namespace SpaceConsole
             currentPlanet = Planet;
             totalCredits = totalcredits;
         }
-        public int[] InventoryQuantities()
+        //TODO : BUG When user buys more items it counts the items already counted earlier, creating a over inflated quantity even though the actual inventory has the true count
+        public static int[] InventoryQuantities()
         {
             for (var i = 0; i < CargoSpace.Count; i++)
             {
