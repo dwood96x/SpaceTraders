@@ -60,7 +60,6 @@ namespace SpaceConsole
                         }
                     }
                     Console.ReadLine();
-                    Regex.Matches()
                 }
                 else if (input.ToLower() == "inventory")
                 {
