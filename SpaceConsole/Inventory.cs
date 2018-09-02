@@ -87,6 +87,7 @@ namespace SpaceConsole
             Console.WriteLine("--------------------------------------");
             Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", Ship.ShipName, Ship.CurShipSize );
             Console.WriteLine("--------------------------------------");
+            InventoryQuantities();
             for (var i = 0; i < 8; i++)
             {
                 switch (i)
@@ -119,6 +120,7 @@ namespace SpaceConsole
             }
             Console.WriteLine("Press enter to continue");
             Console.ReadLine();
+            Array.Clear(cargoQuantity, 0, 8);
         }
     }
 }
