@@ -86,7 +86,9 @@ namespace SpaceConsole
                     {
                         Inventory.AddCargo("Water", Ship);
                     }
-                    Console.ReadLine();                    
+                    Console.WriteLine("Press ENTER to continiue");
+                    Console.ReadLine();
+
                 }
             }            
             else if (input.ToLower() == "food")
@@ -111,6 +113,7 @@ namespace SpaceConsole
                     {
                         Inventory.AddCargo("Food", Ship);
                     }
+                    Console.WriteLine("Press ENTER to continiue");
                     Console.ReadLine();
                 }
             }
@@ -136,6 +139,7 @@ namespace SpaceConsole
                     {
                         Inventory.AddCargo("Common Mineral", Ship);
                     }
+                    Console.WriteLine("Press ENTER to continiue");
                     Console.ReadLine();
                 }
             }
@@ -161,6 +165,7 @@ namespace SpaceConsole
                     {
                         Inventory.AddCargo("Medical Supply", Ship);
                     }
+                    Console.WriteLine("Press ENTER to continiue");
                     Console.ReadLine();
                 }
             }
@@ -186,6 +191,7 @@ namespace SpaceConsole
                     {
                         Inventory.AddCargo("Technology", Ship);
                     }
+                    Console.WriteLine("Press ENTER to continiue");
                     Console.ReadLine();
                 }
             }
@@ -212,6 +218,7 @@ namespace SpaceConsole
                     {
                         Inventory.AddCargo("Weapon", Ship);
                     }
+                    Console.WriteLine("Press ENTER to continiue");
                     Console.ReadLine();
                 }
             }
@@ -237,6 +244,7 @@ namespace SpaceConsole
                     {
                         Inventory.AddCargo("Rare Material", Ship);
                     }
+                    Console.WriteLine("Press ENTER to continiue");
                     Console.ReadLine();
                 }
             }
@@ -262,12 +270,12 @@ namespace SpaceConsole
                     {
                         Inventory.AddCargo("Dark Matter", Ship);
                     }
+                    Console.WriteLine("Press ENTER to continiue");
                     Console.ReadLine();
                 }
             }
             else if (input.ToLower() == "leave")
             {
-
             }
             else
             {
