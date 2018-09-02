@@ -59,6 +59,7 @@ namespace SpaceConsole
             }
             return cargoQuantity;
         }
+
             public static void AddCargo(string boughtItem, Ship Ship)
         {
             if (CargoSpace.Count == Ship.CurShipSize)
