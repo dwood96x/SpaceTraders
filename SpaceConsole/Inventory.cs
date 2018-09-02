@@ -55,7 +55,7 @@ namespace SpaceConsole
                     case "Dark Matter":
                         cargoQuantity[7] += 1;
                         break;
-                }
+                                        }
             }
             return cargoQuantity;
         }
