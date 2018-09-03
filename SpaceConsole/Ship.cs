@@ -27,7 +27,7 @@ namespace SpaceConsole
         //Ship upgrade methods below
         public void CargoUpgrade()
         {
-            CurShipSize += 1;
+            CurShipSize += 2;
         }
         public void SpeedUpgrade()
         {
@@ -35,7 +35,7 @@ namespace SpaceConsole
         }
         public void FuelUpgrade()
         {
-            MaxFuel += 1;
+            MaxFuel += 2;
         }
         public void RefillFuel(double fuelrequested)
         {

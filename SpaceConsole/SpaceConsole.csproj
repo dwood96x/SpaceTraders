@@ -55,6 +55,7 @@
     <Compile Include="SellItems.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="Time.cs" />
+    <Compile Include="Upgrades.cs" />
     <Compile Include="Warp.cs" />
   </ItemGroup>
   <ItemGroup>
