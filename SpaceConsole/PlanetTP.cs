@@ -9,7 +9,7 @@ namespace SpaceConsole
     class PlanetTP
     {
         public static bool exitA = true;
-        public static void EarthTP(Inventory inventory, Ship Ship, Planet currentPlanet)
+        public static void TradingPost(Inventory inventory, Ship Ship, Planet currentPlanet)
         {
             string earth = "\nWelcome to the Trading Post of Earth.\n";
             for (int i = 0; i < earth.Length; i++)

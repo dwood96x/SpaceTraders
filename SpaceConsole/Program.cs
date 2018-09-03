@@ -37,17 +37,12 @@ namespace SpaceConsole
             do
             {
                 Console.Clear();
-                Console.WriteLine("You are in your ship orbiting {0}", inventory.currentPlanet);
+                Console.WriteLine("You are in your ship orbiting {0}", currentplanet.planetName);
                 Console.WriteLine("\nYou can go to the Trade Post, Travel, Inventory, or Exit");
                 string input = Console.ReadLine();
                 if (input.ToLower() == "trade post")
                 {
-                    if (inventory.currentPlanet == "Earth")
-                    {
-                        PlanetTP.EarthTP(inventory, Ship, currentplanet);
-                    }
-                    
-
+                    PlanetTP.TradingPost(inventory, Ship, currentplanet);
                 }
                 else if (input.ToLower() == "travel")
                 {
@@ -60,10 +55,25 @@ namespace SpaceConsole
                         }
                     }
                     var planetinput = Console.ReadLine();
-                    //foreach (var planetf in planetlist)
+                    bool properinput = false;
+                    do
                     {
-                        //if (planetinput == )
-                    }
+                        foreach (var planetf in planetlist)
+                        {
+                            if (planetinput.ToLower() == planetf.planetName.ToLower() && Ship.CurrentFuel >= Planet.Distance(currentplanet, planetf))
+                            {
+                                Warp.WarpTo(currentplanet, planetf, Ship, inventory);
+                                currentplanet = planetf;
+                                properinput = true;
+                            }
+                        }
+                        if (properinput == false)
+                        {
+                            Console.WriteLine("Not enough fuel or invalid input, please try again.");
+                            Console.WriteLine("Press ENTER to continue");
+                            Console.ReadLine();
+                        }
+                    } while (properinput == false);
                 }
                 else if (input.ToLower() == "inventory")
                 {
