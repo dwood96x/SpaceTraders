@@ -12,13 +12,15 @@ namespace SpaceConsole
         public static void TradingPost(Inventory inventory, Ship Ship, Planet currentPlanet)
         {
             // TODO - Find a way to automatically change the text to show the current location
-            string earth = "\nWelcome to the Trading Post of Earth.\n";
-            for (int i = 0; i < earth.Length; i++)
-            {
-                Console.Write(earth[i]);
-                System.Threading.
-                Thread.Sleep(35);
-            }
+
+            //string earth = "\nWelcome to the Trading Post of {0}.\n";
+            //for (int i = 0; i < earth.Length; i++)
+            //{
+            //    Console.Write(earth[i]);
+            //    System.Threading.
+            //    Thread.Sleep(35);
+            //}
+            Console.WriteLine("\nWelcome to the Trading Post of {0}.\n", currentPlanet.planetName);
             string avail = "\nHere is the list of availble items.\n";
             for (int i = 0; i < avail.Length; i++)
             {
