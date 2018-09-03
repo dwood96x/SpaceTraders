@@ -81,13 +81,14 @@ namespace SpaceConsole
                     double remain = inventory.pCredits + total;
                     Console.WriteLine("\nYou sold {0} Water(s) for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    //inventory.pCredits = remain;
+                    inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
                     {
                         Inventory.RemoveCargo("Water", Ship);
                     }
                     Console.ReadLine();
                 }
+                Array.Clear(Inventory.cargoQuantity, 0, 8);
             }
             else if (input.ToLower() == "food")
             {
@@ -106,13 +107,14 @@ namespace SpaceConsole
                     double remain = inventory.pCredits + total;
                     Console.WriteLine("\nYou sold {0} Food for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    //inventory.pCredits = remain;
+                    inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
                     {
                         Inventory.RemoveCargo("Food", Ship);
                     }
                     Console.ReadLine();
                 }
+                Array.Clear(Inventory.cargoQuantity, 0, 8);
             }
             else if (input.ToLower() == "common mineral")
             {
@@ -131,13 +133,14 @@ namespace SpaceConsole
                     double remain = inventory.pCredits + total;
                     Console.WriteLine("\nYou sold {0} Common Mineral(s) for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    //inventory.pCredits = remain;
+                    inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
                     {
                         Inventory.RemoveCargo("Common Mineral", Ship);
                     }
                     Console.ReadLine();
                 }
+                Array.Clear(Inventory.cargoQuantity, 0, 8);
             }
             else if (input.ToLower() == "medical supplies")
             {
@@ -156,13 +159,14 @@ namespace SpaceConsole
                     double remain = inventory.pCredits + total;
                     Console.WriteLine("\nYou sold {0} Medical Supplies for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    //inventory.pCredits = remain;
+                    inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
                     {
                         Inventory.RemoveCargo("Medical Supplies", Ship);
                     }
                     Console.ReadLine();
                 }
+                Array.Clear(Inventory.cargoQuantity, 0, 8);
             }
             else if (input.ToLower() == "technology")
             {
@@ -181,13 +185,14 @@ namespace SpaceConsole
                     double remain = inventory.pCredits + total;
                     Console.WriteLine("\nYou sold {0} Technology for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    //inventory.pCredits = remain;
+                    inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
                     {
                         Inventory.RemoveCargo("Technology", Ship);
                     }
                     Console.ReadLine();
                 }
+                Array.Clear(Inventory.cargoQuantity, 0, 8);
             }
             else if (input.ToLower() == "weapon")
             {
@@ -206,13 +211,14 @@ namespace SpaceConsole
                     double remain = inventory.pCredits + total;
                     Console.WriteLine("\nYou sold {0} Weapon(s) for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    //inventory.pCredits = remain;
+                    inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
                     {
                         Inventory.RemoveCargo("Weapon", Ship);
                     }
                     Console.ReadLine();
                 }
+                Array.Clear(Inventory.cargoQuantity, 0, 8);
             }
             else if (input.ToLower() == "rare material")
             {
@@ -231,13 +237,14 @@ namespace SpaceConsole
                     double remain = inventory.pCredits + total;
                     Console.WriteLine("\nYou sold {0} Rare Material for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    //inventory.pCredits = remain;
+                    inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
                     {
                         Inventory.RemoveCargo("Rare Material", Ship);
                     }
                     Console.ReadLine();
                 }
+                Array.Clear(Inventory.cargoQuantity, 0, 8);
             }
             else if (input.ToLower() == "dark matter")
             {
@@ -256,13 +263,14 @@ namespace SpaceConsole
                     double remain = inventory.pCredits + total;
                     Console.WriteLine("\nYou sold {0} Dark Matter for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
-                    //inventory.pCredits = remain;
+                    inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
                     {
                         Inventory.RemoveCargo("Dark Matter", Ship);
                     }
                     Console.ReadLine();
                 }
+                Array.Clear(Inventory.cargoQuantity, 0, 8);
             }
             else if (input.ToLower() == "leave")
             {
