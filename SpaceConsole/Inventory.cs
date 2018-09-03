@@ -82,6 +82,7 @@ namespace SpaceConsole
         {
             Console.WriteLine("You are {0} years old.", inventory.Age);
             Console.WriteLine("You have {0} credits.", inventory.pCredits);
+            Console.WriteLine("You have {0:F2} fuel in your tank and have a max capacity of {1}", Ship.CurrentFuel, Ship.MaxFuel);
             Console.WriteLine("You are at {0}", inventory.currentPlanet);
             Console.WriteLine("--------------------------------------");
             Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", Ship.ShipName, Ship.CurShipSize );

@@ -11,6 +11,7 @@ namespace SpaceConsole
         public static bool exitA = true;
         public static void TradingPost(Inventory inventory, Ship Ship, Planet currentPlanet)
         {
+            // TODO - Find a way to automatically change the text to show the current location
             string earth = "\nWelcome to the Trading Post of Earth.\n";
             for (int i = 0; i < earth.Length; i++)
             {
