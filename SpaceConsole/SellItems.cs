@@ -73,7 +73,7 @@ namespace SpaceConsole
                 double total = num * tw;
                 if (num > Inventory.InventoryQuantities()[0])
                 {
-                    Console.WriteLine("You do have that much in your cargo, please check you inventory.");
+                    Console.WriteLine("You do not have that much in your cargo, please check you inventory.");
                     return;
                 }
                 else

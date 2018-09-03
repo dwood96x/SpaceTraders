@@ -64,7 +64,7 @@ namespace SpaceConsole
         {
             if (CargoSpace.Count == Ship.CurShipSize)
             {
-                Console.WriteLine("Your cargospace is full. Sell something or upgrade your ship to get more.");
+                Console.WriteLine("Your cargo space is full. Sell something or upgrade your ship to get more.");
             }
             else if (CargoSpace.Count < Ship.CurShipSize)
             {
