@@ -18,10 +18,10 @@ namespace SpaceConsole
             Planet grenonus = new Planet(-21, -3, "Grenonus", "Earthish");
             Planet derioa = new Planet(-13, 12, "Derioa", "Marish");
             Planet esides = new Planet(6, 32, "Esides", "Marish");
-            Planet geitov = new Planet(-28, 38, "Geirtov", "Mining");
+            Planet geirtov = new Planet(-28, 38, "Geirtov", "Mining");
             Planet x99 = new Planet(7, 7, "X99", "Marish");
             List<Planet> PlanetList = new List<Planet>();
-            PlanetList.AddMany(earth, ac, m63, p100, grenonus, derioa, esides, geitov);
+            PlanetList.AddMany(earth, ac, m63, p100, grenonus, derioa, esides, geirtov, x99);
       
             Console.WriteLine("Welcome to Space Traders 9000. \n");
             // Next lines set initial game conditions
@@ -56,10 +56,14 @@ namespace SpaceConsole
                     {
                         if (Planet.Distance(currentplanet, planetf) < Ship.CurrentFuel && Planet.Distance(currentplanet, planetf) != 0)
                         {
-                            Console.WriteLine("{0} : {1}" ,planetf.planetName, Planet.Distance(currentplanet,planetf));
+                            Console.WriteLine("{0} : {1:F2} Light years away" ,planetf.planetName, Planet.Distance(currentplanet,planetf));
                         }
                     }
-                    Console.ReadLine();
+                    var planetinput = Console.ReadLine();
+                    //foreach (var planetf in planetlist)
+                    {
+                        //if (planetinput == )
+                    }
                 }
                 else if (input.ToLower() == "inventory")
                 {
