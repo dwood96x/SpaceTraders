@@ -89,14 +89,14 @@ namespace SpaceConsole
                     Console.ReadLine();
                 }
             }
-            if (input.ToLower() == "food")
+            else if (input.ToLower() == "food")
             {
                 double num;
                 Console.Write("How much Food would you like to sell?\n");
                 string wat = Console.ReadLine();
                 num = double.Parse(wat);
                 double total = num * tw;
-                if (num > Inventory.InventoryQuantities()[0])
+                if (num > Inventory.InventoryQuantities()[1])
                 {
                     Console.WriteLine("You do not have that much in your cargo, please check you inventory.");
                     return;
@@ -114,14 +114,14 @@ namespace SpaceConsole
                     Console.ReadLine();
                 }
             }
-            if (input.ToLower() == "common mineral")
+            else if (input.ToLower() == "common mineral")
             {
                 double num;
                 Console.Write("How much Common Mineral would you like to sell?\n");
                 string wat = Console.ReadLine();
                 num = double.Parse(wat);
                 double total = num * tw;
-                if (num > Inventory.InventoryQuantities()[0])
+                if (num > Inventory.InventoryQuantities()[2])
                 {
                     Console.WriteLine("You do have that much in your cargo, please check you inventory.");
                     return;
@@ -139,14 +139,14 @@ namespace SpaceConsole
                     Console.ReadLine();
                 }
             }
-            if (input.ToLower() == "medical supplies")
+            else if (input.ToLower() == "medical supplies")
             {
                 double num;
                 Console.Write("How many Medical Supplies would you like to sell?\n");
                 string wat = Console.ReadLine();
                 num = double.Parse(wat);
                 double total = num * tw;
-                if (num > Inventory.InventoryQuantities()[0])
+                if (num > Inventory.InventoryQuantities()[3])
                 {
                     Console.WriteLine("You do have that much in your cargo, please check you inventory.");
                     return;
@@ -164,14 +164,14 @@ namespace SpaceConsole
                     Console.ReadLine();
                 }
             }
-            if (input.ToLower() == "technology")
+            else if (input.ToLower() == "technology")
             {
                 double num;
                 Console.Write("How much Technology would you like to sell?\n");
                 string wat = Console.ReadLine();
                 num = double.Parse(wat);
                 double total = num * tw;
-                if (num > Inventory.InventoryQuantities()[0])
+                if (num > Inventory.InventoryQuantities()[4])
                 {
                     Console.WriteLine("You do have that much in your cargo, please check you inventory.");
                     return;
@@ -189,14 +189,14 @@ namespace SpaceConsole
                     Console.ReadLine();
                 }
             }
-            if (input.ToLower() == "weapon")
+            else if (input.ToLower() == "weapon")
             {
                 double num;
                 Console.Write("How many Weapon(s) would you like to sell?\n");
                 string wat = Console.ReadLine();
                 num = double.Parse(wat);
                 double total = num * tw;
-                if (num > Inventory.InventoryQuantities()[0])
+                if (num > Inventory.InventoryQuantities()[5])
                 {
                     Console.WriteLine("You do have that much in your cargo, please check you inventory.");
                     return;
@@ -214,14 +214,14 @@ namespace SpaceConsole
                     Console.ReadLine();
                 }
             }
-            if (input.ToLower() == "rare material")
+            else if (input.ToLower() == "rare material")
             {
                 double num;
                 Console.Write("How much Rare Material would you like to sell?\n");
                 string wat = Console.ReadLine();
                 num = double.Parse(wat);
                 double total = num * tw;
-                if (num > Inventory.InventoryQuantities()[0])
+                if (num > Inventory.InventoryQuantities()[6])
                 {
                     Console.WriteLine("You do have that much in your cargo, please check you inventory.");
                     return;
@@ -239,14 +239,14 @@ namespace SpaceConsole
                     Console.ReadLine();
                 }
             }
-            if (input.ToLower() == "dark matter")
+            else if (input.ToLower() == "dark matter")
             {
                 double num;
                 Console.Write("How much Dark Matter would you like to sell?\n");
                 string wat = Console.ReadLine();
                 num = double.Parse(wat);
                 double total = num * tw;
-                if (num > Inventory.InventoryQuantities()[0])
+                if (num > Inventory.InventoryQuantities()[7])
                 {
                     Console.WriteLine("You do have that much in your cargo, please check you inventory.");
                     return;
@@ -263,6 +263,9 @@ namespace SpaceConsole
                     }
                     Console.ReadLine();
                 }
+            }
+            else if (input.ToLower() == "leave")
+            {
             }
             else
             {

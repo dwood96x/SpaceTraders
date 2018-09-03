@@ -21,6 +21,7 @@ namespace SpaceConsole
             double twe;
             double trm;
             double tdm;
+            double tfuel;
             if (biome == "Earthish")
             {
                 earthmod = 0.65;
@@ -59,6 +60,7 @@ namespace SpaceConsole
             Console.WriteLine("\t Weapon -                      {0}", (twe = weapon.ItemPrice * marsmod));
             Console.WriteLine("\t Rare Material -               {0}", (trm = rareMaterial.ItemPrice * miningmod));
             Console.WriteLine("\t Dark Matter -                 {0}", (tdm = darkMatter.ItemPrice * miningmod));
+            Console.WriteLine("\t Fuel -                        {0}", (tfuel = 30 * miningmod));
             Console.WriteLine("\n"); 
             Console.WriteLine("\n\t Leave\n");
             Console.WriteLine("==============================================");
@@ -270,6 +272,28 @@ namespace SpaceConsole
                     {
                         Inventory.AddCargo("Dark Matter", Ship);
                     }
+                    Console.WriteLine("Press ENTER to continiue");
+                    Console.ReadLine();
+                }
+            }
+            else if (input.ToLower() == "fuel")
+            {
+                Console.WriteLine("How much fuel would you like to buy?");
+                string fuel = Console.ReadLine();
+                double num = double.Parse(fuel);
+                double total = num * tfuel;
+                double tempfuel = Ship.CurrentFuel;
+                if ((tempfuel += num) > Ship.MaxFuel || total > inventory.pCredits)
+                {
+                    Console.WriteLine("You do not have enough credits or you don't have the max fuel capacity to buy this");
+                }
+                else
+                {
+                    double remain = inventory.pCredits - total;
+                    Console.WriteLine("\nYou bought {0} Fuel for {1}.", fuel, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    inventory.pCredits = (int)remain;
+                    Ship.CurrentFuel += num;
                     Console.WriteLine("Press ENTER to continiue");
                     Console.ReadLine();
                 }

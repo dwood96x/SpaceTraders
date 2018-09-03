@@ -34,7 +34,8 @@ namespace SpaceConsole
                               "\n\tTechnology" +
                               "\n\tWeapons" +
                               "\n\tRare Material" +
-                              "\n\tDark Matter\n");
+                              "\n\tDark Matter\n" +
+                              "\n\tFuel");
             Console.WriteLine("==================================");
 
             do
