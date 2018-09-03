@@ -9,7 +9,7 @@ namespace SpaceConsole
     class PlanetTP
     {
         public static bool exitA = true;
-        public static void TradingPost(Inventory inventory, Ship Ship, Planet currentPlanet)
+        public static void TradingPost(Inventory inventory, Ship playership, Planet currentPlanet)
         {
             // TODO - Find a way to automatically change the text to show the current location
 
@@ -36,26 +36,30 @@ namespace SpaceConsole
                               "\n\tTechnology" +
                               "\n\tWeapons" +
                               "\n\tRare Material" +
-                              "\n\tDark Matter\n" +
+                              "\n\tDark Matter" +
                               "\n\tFuel");
             Console.WriteLine("==================================");
 
             do
             {
-                Console.WriteLine("\n{0}, would you like to Buy, Sell, or Leave", inventory.userName);
+                Console.WriteLine("\n{0}, would you like to Buy, Sell, Upgrade, or Leave", inventory.userName);
                 string userInput = Console.ReadLine();
 
                 if (userInput.ToLower() == "buy")
                 {
-                    BuyItems.BItems(inventory, Ship, currentPlanet.biome );
+                    BuyItems.BItems(inventory, playership, currentPlanet.biome );
                 }
                 else if (userInput.ToLower() == "sell")
                 {
-                    SellItems.SItems(inventory, Ship, currentPlanet.biome);
+                    SellItems.SItems(inventory, playership, currentPlanet.biome);
                 }
                 else if (userInput.ToLower() == "leave")
                 {
                     Leave(inventory);                    
+                }
+                else if (userInput.ToLower() == "upgrade")
+                {
+                    Upgrades.BuyUpgrade(inventory, playership);
                 }
                 else
                 {

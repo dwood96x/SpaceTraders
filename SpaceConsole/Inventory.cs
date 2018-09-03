@@ -85,7 +85,7 @@ namespace SpaceConsole
             Console.WriteLine("You have {0:F2} fuel in your tank and have a max capacity of {1}", Ship.CurrentFuel, Ship.MaxFuel);
             Console.WriteLine("You are at {0}", inventory.currentPlanet);
             Console.WriteLine("--------------------------------------");
-            Console.WriteLine("Your ship is a {0} and has a max cargo space of {1}", Ship.ShipName, Ship.CurShipSize );
+            Console.WriteLine("Your ship is a {0} with a max speed of {2} and has a max cargo space of {1}", Ship.ShipName, Ship.CurShipSize, Ship.MaxSpeed );
             Console.WriteLine("--------------------------------------");
             InventoryQuantities();
             for (var i = 0; i < 8; i++)
