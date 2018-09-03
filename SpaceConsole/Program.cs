@@ -67,7 +67,7 @@ namespace SpaceConsole
                                 properinput = true;
                             }
                         }
-                        if (planetinput.ToLower() == "false")
+                        if (planetinput.ToLower() == "leave")
                         {
                             properinput = true;
                         }
