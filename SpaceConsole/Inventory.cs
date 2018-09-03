@@ -9,14 +9,14 @@ namespace SpaceConsole
     public class Inventory
     {
         public string userName;
-        public int pCredits;
-        public int Age;
+        public double pCredits;
+        public double Age;
         public double totalDistance;
         public string currentPlanet;
-        public int totalCredits;
+        public double totalCredits;
         public static List<string> CargoSpace = new List<string>();
-        public static int[] cargoQuantity = new int[8];
-        public Inventory(string username, int pcredits, int age, double totaldistance, string Planet, int totalcredits)
+        public static double[] cargoQuantity = new double[8];
+        public Inventory(string username, double pcredits, double age, double totaldistance, string Planet, double totalcredits)
         {
             userName = username;
             pCredits = pcredits;
@@ -25,7 +25,7 @@ namespace SpaceConsole
             currentPlanet = Planet;
             totalCredits = totalcredits;
         }
-        public static int[] InventoryQuantities()
+        public static double[] InventoryQuantities()
         {
             for (var i = 0; i < CargoSpace.Count; i++)
             {
@@ -55,7 +55,7 @@ namespace SpaceConsole
                     case "Dark Matter":
                         cargoQuantity[7] += 1;
                         break;
-                                        }
+                }
             }
             return cargoQuantity;
         }
@@ -72,7 +72,7 @@ namespace SpaceConsole
                 CargoSpace.Add(boughtItem);
             }
         }
-        public static void RemoveCargo(string removeItem)
+        public static void RemoveCargo(string removeItem, Ship ship)
         {
             CargoSpace.Remove(removeItem);
             Console.WriteLine("{0} removed from cargo.", removeItem);
@@ -117,7 +117,7 @@ namespace SpaceConsole
                         break;
                 }
             }
-            Console.WriteLine("Press enter to continue");
+            Console.WriteLine("\n\tPress enter to continue");
             Console.ReadLine();
             Array.Clear(cargoQuantity, 0, 8);
         }

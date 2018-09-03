@@ -64,38 +64,213 @@ namespace SpaceConsole
             Console.WriteLine("==============================================");
             string input = Console.ReadLine();
 
-            //if (input.ToLower() == "water")
-            //{
-            //    double num;
-            //    Console.Write("How much {0} would you like to sell?\n", input);
-            //    string wat = Console.ReadLine();
-            //    num = double.Parse(wat);
-            //    double total = num * tw;
-            //    if (num > )
-            //    {
-            //        Console.WriteLine("You do that much in your cargo, please check you inventory.");
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        double remain = inventory.pCredits - total;
-            //        Console.WriteLine("\nYou bought {0} {1} for {2}.", num, input, total);
-            //        Console.WriteLine("\nYou have {0} credits left.", remain);
-            //        //inventory.pCredits = remain;
-            //        for (int i = 0; i < num; i++)
-            //        {
-            //            Inventory.AddCargo("Water", Ship);
-            //        }
-            //        Console.ReadLine();
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Invalid selection, please try again.\n");
-            //    Console.WriteLine("Press ENTER` to continue");
-            //    Console.ReadLine();
-            //    Console.Clear();
-            //}
+            if (input.ToLower() == "water")
+            {
+                double num;
+                Console.Write("How much Water would you like to sell?\n");
+                string wat = Console.ReadLine();
+                num = double.Parse(wat);
+                double total = num * tw;
+                if (num > Inventory)
+                {
+                    Console.WriteLine("You do have that much in your cargo, please check you inventory.");
+                    return;
+                }
+                else
+                {
+                    double remain = inventory.pCredits + total;
+                    Console.WriteLine("\nYou bought {0} Water(s) for {1}.", num, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    //inventory.pCredits = remain;
+                    for (int i = 0; i < num; i++)
+                    {
+                        Inventory.RemoveCargo("Water", Ship);
+                    }
+                    Console.ReadLine();
+                }
+            }
+            if (input.ToLower() == "food")
+            {
+                double num;
+                Console.Write("How much Food would you like to sell?\n");
+                string wat = Console.ReadLine();
+                num = double.Parse(wat);
+                double total = num * tw;
+                if (num > Inventory)
+                {
+                    Console.WriteLine("You do not have that much in your cargo, please check you inventory.");
+                    return;
+                }
+                else
+                {
+                    double remain = inventory.pCredits + total;
+                    Console.WriteLine("\nYou bought {0} Food for {1}.", num, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    //inventory.pCredits = remain;
+                    for (int i = 0; i < num; i++)
+                    {
+                        Inventory.RemoveCargo("Food", Ship);
+                    }
+                    Console.ReadLine();
+                }
+            }
+            if (input.ToLower() == "common mineral")
+            {
+                double num;
+                Console.Write("How much Common Mineral would you like to sell?\n");
+                string wat = Console.ReadLine();
+                num = double.Parse(wat);
+                double total = num * tw;
+                if (num > Inventory)
+                {
+                    Console.WriteLine("You do have that much in your cargo, please check you inventory.");
+                    return;
+                }
+                else
+                {
+                    double remain = inventory.pCredits + total;
+                    Console.WriteLine("\nYou bought {0} Common Mineral(s) for {1}.", num, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    //inventory.pCredits = remain;
+                    for (int i = 0; i < num; i++)
+                    {
+                        Inventory.RemoveCargo("Common Mineral", Ship);
+                    }
+                    Console.ReadLine();
+                }
+            }
+            if (input.ToLower() == "medical supplies")
+            {
+                double num;
+                Console.Write("How many Medical Supplies would you like to sell?\n");
+                string wat = Console.ReadLine();
+                num = double.Parse(wat);
+                double total = num * tw;
+                if (num > Inventory)
+                {
+                    Console.WriteLine("You do have that much in your cargo, please check you inventory.");
+                    return;
+                }
+                else
+                {
+                    double remain = inventory.pCredits + total;
+                    Console.WriteLine("\nYou bought {0} Medical Supplies for {1}.", num, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    //inventory.pCredits = remain;
+                    for (int i = 0; i < num; i++)
+                    {
+                        Inventory.RemoveCargo("Medical Supplies", Ship);
+                    }
+                    Console.ReadLine();
+                }
+            }
+            if (input.ToLower() == "technology")
+            {
+                double num;
+                Console.Write("How much Technology would you like to sell?\n");
+                string wat = Console.ReadLine();
+                num = double.Parse(wat);
+                double total = num * tw;
+                if (num > Inventory)
+                {
+                    Console.WriteLine("You do have that much in your cargo, please check you inventory.");
+                    return;
+                }
+                else
+                {
+                    double remain = inventory.pCredits + total;
+                    Console.WriteLine("\nYou bought {0} Technology for {1}.", num, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    //inventory.pCredits = remain;
+                    for (int i = 0; i < num; i++)
+                    {
+                        Inventory.RemoveCargo("Technology", Ship);
+                    }
+                    Console.ReadLine();
+                }
+            }
+            if (input.ToLower() == "weapon")
+            {
+                double num;
+                Console.Write("How many Weapon(s) would you like to sell?\n");
+                string wat = Console.ReadLine();
+                num = double.Parse(wat);
+                double total = num * tw;
+                if (num > Inventory)
+                {
+                    Console.WriteLine("You do have that much in your cargo, please check you inventory.");
+                    return;
+                }
+                else
+                {
+                    double remain = inventory.pCredits + total;
+                    Console.WriteLine("\nYou bought {0} Weapon(s) for {1}.", num, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    //inventory.pCredits = remain;
+                    for (int i = 0; i < num; i++)
+                    {
+                        Inventory.RemoveCargo("Weapon", Ship);
+                    }
+                    Console.ReadLine();
+                }
+            }
+            if (input.ToLower() == "rare material")
+            {
+                double num;
+                Console.Write("How much Rare Material would you like to sell?\n");
+                string wat = Console.ReadLine();
+                num = double.Parse(wat);
+                double total = num * tw;
+                if (num > Inventory)
+                {
+                    Console.WriteLine("You do have that much in your cargo, please check you inventory.");
+                    return;
+                }
+                else
+                {
+                    double remain = inventory.pCredits + total;
+                    Console.WriteLine("\nYou bought {0} Rare Material for {1}.", num, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    //inventory.pCredits = remain;
+                    for (int i = 0; i < num; i++)
+                    {
+                        Inventory.RemoveCargo("Rare Material", Ship);
+                    }
+                    Console.ReadLine();
+                }
+            }
+            if (input.ToLower() == "dark matter")
+            {
+                double num;
+                Console.Write("How much Dark Matter would you like to sell?\n");
+                string wat = Console.ReadLine();
+                num = double.Parse(wat);
+                double total = num * tw;
+                if (num > Inventory)
+                {
+                    Console.WriteLine("You do have that much in your cargo, please check you inventory.");
+                    return;
+                }
+                else
+                {
+                    double remain = inventory.pCredits + total;
+                    Console.WriteLine("\nYou bought {0} Dark Matter for {1}.", num, total);
+                    Console.WriteLine("\nYou have {0} credits left.", remain);
+                    //inventory.pCredits = remain;
+                    for (int i = 0; i < num; i++)
+                    {
+                        Inventory.RemoveCargo("Dark Matter", Ship);
+                    }
+                    Console.ReadLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid selection, please try again.\n");
+                Console.WriteLine("Press ENTER` to continue");
+                Console.ReadLine();
+                Console.Clear();
+            }
         }
     }
 }
