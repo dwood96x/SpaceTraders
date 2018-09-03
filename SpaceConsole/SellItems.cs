@@ -49,7 +49,7 @@ namespace SpaceConsole
             Item darkMatter = new Item("Dark Matter", 92500);
 
             Console.Clear();
-            Console.WriteLine("Which item would you like to buy {0}?", inventory.userName);
+            Console.WriteLine("Which item would you like to sell {0}?", inventory.userName);
             Console.WriteLine("==============================================");
             Console.WriteLine("\n\t Water -                       {0}", (tw = Water.ItemPrice * earthmod));
             Console.WriteLine("\t Food -                        {0}", (tf = Food.ItemPrice * earthmod));
@@ -79,7 +79,7 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits + total;
-                    Console.WriteLine("\nYou bought {0} Water(s) for {1}.", num, total);
+                    Console.WriteLine("\nYou sold {0} Water(s) for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
                     //inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
@@ -104,7 +104,7 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits + total;
-                    Console.WriteLine("\nYou bought {0} Food for {1}.", num, total);
+                    Console.WriteLine("\nYou sold {0} Food for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
                     //inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
@@ -129,7 +129,7 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits + total;
-                    Console.WriteLine("\nYou bought {0} Common Mineral(s) for {1}.", num, total);
+                    Console.WriteLine("\nYou sold {0} Common Mineral(s) for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
                     //inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
@@ -154,7 +154,7 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits + total;
-                    Console.WriteLine("\nYou bought {0} Medical Supplies for {1}.", num, total);
+                    Console.WriteLine("\nYou sold {0} Medical Supplies for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
                     //inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
@@ -179,7 +179,7 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits + total;
-                    Console.WriteLine("\nYou bought {0} Technology for {1}.", num, total);
+                    Console.WriteLine("\nYou sold {0} Technology for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
                     //inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
@@ -204,7 +204,7 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits + total;
-                    Console.WriteLine("\nYou bought {0} Weapon(s) for {1}.", num, total);
+                    Console.WriteLine("\nYou sold {0} Weapon(s) for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
                     //inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
@@ -229,7 +229,7 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits + total;
-                    Console.WriteLine("\nYou bought {0} Rare Material for {1}.", num, total);
+                    Console.WriteLine("\nYou sold {0} Rare Material for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
                     //inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
@@ -254,7 +254,7 @@ namespace SpaceConsole
                 else
                 {
                     double remain = inventory.pCredits + total;
-                    Console.WriteLine("\nYou bought {0} Dark Matter for {1}.", num, total);
+                    Console.WriteLine("\nYou sold {0} Dark Matter for {1}.", num, total);
                     Console.WriteLine("\nYou have {0} credits left.", remain);
                     //inventory.pCredits = remain;
                     for (int i = 0; i < num; i++)
