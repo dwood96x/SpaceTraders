@@ -46,7 +46,7 @@ namespace SpaceConsole
                 }
                 else if (input.ToLower() == "travel")
                 {
-                    Console.WriteLine("Where would you like to warp to?");
+                    Console.WriteLine("Where would you like to warp to? Enter the planet name or leave to exit");
                     foreach (var planetf in planetlist)
                     {
                         if (Planet.Distance(currentplanet, planetf) < Ship.CurrentFuel && Planet.Distance(currentplanet, planetf) != 0)
@@ -67,7 +67,11 @@ namespace SpaceConsole
                                 properinput = true;
                             }
                         }
-                        if (properinput == false)
+                        if (planetinput.ToLower() == "false")
+                        {
+                            properinput = true;
+                        }
+                        else if (properinput == false)
                         {
                             Console.WriteLine("Not enough fuel or invalid input, please try again.");
                             Console.WriteLine("Press ENTER to continue");
