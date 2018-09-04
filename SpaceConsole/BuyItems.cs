@@ -28,7 +28,7 @@ namespace SpaceConsole
                 marsmod = 1.3;
                 miningmod = 1.4;
             }
-            else if(biome == "Marish")
+            else if(biome == "Marsish")
             {
                 earthmod = 1.4;
                 marsmod = 0.65;

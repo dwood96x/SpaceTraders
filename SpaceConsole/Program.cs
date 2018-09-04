@@ -12,14 +12,14 @@ namespace SpaceConsole
         static void Main(string[] args)
         {
             Planet earth = new Planet(0, 0, "Earth", "Earthish");
-            Planet ac = new Planet(0, -4.367, "Alpha Centurion", "Marish");
+            Planet ac = new Planet(0, -4.367, "Alpha Centurion", "Marsish");
             Planet m63 = new Planet(-4.6, 5, "M63", "Earthish");
-            Planet p100 = new Planet(-10, -8, "P100", "Marish");
+            Planet p100 = new Planet(-10, -8, "P100", "Marsish");
             Planet grenonus = new Planet(-21, -3, "Grenonus", "Earthish");
-            Planet derioa = new Planet(-13, 12, "Derioa", "Marish");
-            Planet esides = new Planet(6, 32, "Esides", "Marish");
+            Planet derioa = new Planet(-13, 12, "Derioa", "Marsish");
+            Planet esides = new Planet(6, 32, "Esides", "Marsish");
             Planet geirtov = new Planet(-28, 38, "Geirtov", "Mining");
-            Planet x99 = new Planet(7, 7, "X99", "Marish");
+            Planet x99 = new Planet(7, 7, "X99", "Marsish");
             List<Planet> PlanetList = new List<Planet>();
             PlanetList.AddMany(earth, ac, m63, p100, grenonus, derioa, esides, geirtov, x99);
       
@@ -51,7 +51,7 @@ namespace SpaceConsole
                     {
                         if (Planet.Distance(currentplanet, planetf) < Ship.CurrentFuel && Planet.Distance(currentplanet, planetf) != 0)
                         {
-                            Console.WriteLine("{0} : {1:F2} Light years away" ,planetf.planetName, Planet.Distance(currentplanet,planetf));
+                            Console.WriteLine("{0} Economy: {1} :{2:F2} Light years away" ,planetf.planetName, planetf.biome, Planet.Distance(currentplanet,planetf));
                         }
                     }
                     var planetinput = Console.ReadLine();
