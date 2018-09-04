@@ -54,10 +54,10 @@ namespace SpaceConsole
                             Console.WriteLine("{0} Economy: {1} :{2:F2} Light years away" ,planetf.planetName, planetf.biome, Planet.Distance(currentplanet,planetf));
                         }
                     }
-                    var planetinput = Console.ReadLine();
                     bool properinput = false;
                     do
                     {
+                        var planetinput = Console.ReadLine();
                         foreach (var planetf in planetlist)
                         {
                             if (planetinput.ToLower() == planetf.planetName.ToLower() && Ship.CurrentFuel >= Planet.Distance(currentplanet, planetf))
